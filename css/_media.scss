@@ -1,0 +1,113 @@
+@media screen and (max-width:1200px) {
+    body {
+        .auk-container {
+            .auk-row {
+                .clock-col {
+
+                    .background-line {
+                        height: 21vw;
+                        line-height: 6.7vw;
+
+                            .timer {
+                            p{
+                                font-size: 10vw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1011px) {
+    body {
+
+        .auk-container {
+            .auk-row {
+                .right-col {
+                    textarea {
+                        height: 60vw;
+                        min-width: 0;
+
+                    }
+                }
+                .clock-col {
+                    .background-line {
+                        line-height: 8rem;
+
+                        height: 25rem;
+                            .timer {
+                            p{
+                                font-size: 12rem;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    body {
+        div.container {
+            header {
+                h4 {
+                    font-size: 5.25vw;
+                }
+            }
+        }
+        .auk-container {
+            .auk-row {
+                .right-col {
+                    textarea {
+                        height: 80vw;
+                        min-width: 0;
+
+                    }
+                }
+                .clock-col {
+                    .background-line {
+                        line-height: 8rem;
+
+                        height: 25rem;
+                            .timer {
+                            p{
+                                font-size: 12rem;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+@media screen and (max-width:576px) {
+    body {
+
+        .auk-container {
+            .auk-row {
+                .right-col {
+                    min-width: 200px;
+                }
+                .clock-col {
+                    .background-line {
+
+                        
+                            .timer {
+                            p{
+                                font-size: 20vw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

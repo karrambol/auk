@@ -1,0 +1,160 @@
+// green with blue accent
+$primary-color-dark:   #00796B;
+$primary-color:        #009688;
+$primary-color-light:  #B2DFDB;
+$primary-color-text:   #FFFFFF;
+$accent-color:         #448AFF;
+$primary-text-color:   #212121;
+$secondary-text-color: #757575;
+$divider-color:        #BDBDBD;
+
+//all green
+//$primary-color-dark: #00796B;
+// $primary-color: #009688;
+// $primary-color-light: #B2DFDB;
+// $primary-color-text: #FFFFFF;
+// $accent-color: #536DFE;
+// $primary-text-color: #212121;
+// $secondary-text-color: #757575;
+// $divider-color: #BDBDBD;
+
+//blue
+// $primary-color-dark:   #303F9F;
+// $primary-color:        #3F51B5;
+// $primary-color-light:  #C5CAE9;
+// $primary-color-text:   #FFFFFF;
+// $accent-color:         #607D8B;
+// $primary-text-color:   #212121;
+// $secondary-text-color: #757575;
+// $divider-color:        #BDBDBD;
+html {
+    font-size: 10px;
+}
+body {
+    font-family: calibri,sans-serif;
+    font-size: 16px;
+    background: url(../img/background.png) repeat;
+    color: $secondary-text-color;
+    //шапка
+    div.container {
+        background-color: $primary-color-dark;
+        header {
+            padding: 1rem 3rem;
+            h4 {
+                font-size: 4rem;
+                font-weight: bold;
+                color: $primary-color-text;
+                text-align: center;
+                >span {
+                    color: $primary-text-color;
+                }
+            }
+        }
+    }
+    //Основная часть
+    .auk-container {
+        .auk-row {
+            height: inherit;
+            .right-col { //Левая сторона
+                min-width: 600px;
+                textarea {
+                    width: 100%;
+                    height: 700px;
+                    min-height: 250px;
+                    padding: 0rem;
+                    background-color: $primary-color-text;
+                    border: 4px solid $primary-color-light;
+                    margin-top: 1.5rem;
+                    margin-bottom: 1.5rem;
+                    border-radius: 0.5rem;
+                    font-size: 4rem;
+                    text-align: right;
+                    color: $primary-text-color;
+                }
+            }    
+            .clock-col { //Правая сторона (часы)
+                max-width: 600px;
+                .text-over {
+                    p {
+                        text-align: center;
+                        color: $primary-text-color;
+                        font-size: 2rem;
+                        transition: 1s;
+
+
+                    }
+                }
+                .background-line {
+                    width: 100%;
+                    height: 250px;
+                    background-color: $primary-color-dark;
+                    background-attachment: unset;
+                    margin-left: 0px;
+                    border: 3px solid $divider-color;
+                    border-left: none;
+                    border-right: none;
+                    line-height: 8rem;
+                    .timer-up-btns {
+                        div {
+                            button {
+                                max-width: 10em;
+                                font-size: 2rem;
+                                padding: 0;
+                                min-width: 4em;
+                                min-height: 1em;
+                                border-radius: 8px;
+                            }
+                        }
+                    }
+                    .timer {
+                        p { 
+                            font-size: 12rem;
+                            text-align: center;
+                            // font-weight: bold;
+                            color: $primary-color-text;
+                            padding-top: 0;
+                            span {
+                                font-size: 8rem;
+                                line-height: 4rem;
+                            }
+                        }
+                    }
+                    .timer-bot-btns {
+                        margin-bottom: 20em;
+                        div {
+                            button {
+                                max-width: 6em;
+                                font-size: 2rem;
+                                padding: 0;
+                                min-width: 5em;
+                                min-height: 1em;
+                                border-radius: 8px;
+                            }
+                        }
+                    } 
+                }
+                .text-under {
+                    p {
+                        text-align: center;
+                        color: transparent;
+                        font-size: 2rem;
+                        transition: 1s;
+
+
+                    }
+                }
+            }
+        }
+    }
+}
+@import 'media';
+
+
+
+
+
+
+
+
+
+
