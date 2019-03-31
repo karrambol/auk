@@ -1,7 +1,27 @@
+@media screen and (max-width:1300px) {
+    body {
+        .auk-container {
+            .auk-row {
+                .right-col {
+                    textarea {
+                        font-size: 3vw;
+
+                    }
+                }
+            }
+        }
+    }
+}
 @media screen and (max-width:1200px) {
     body {
         .auk-container {
             .auk-row {
+                .right-col {
+                    textarea {
+                        
+
+                    }
+                }
                 .clock-col {
 
                     .background-line {
@@ -26,8 +46,10 @@
             .auk-row {
                 .right-col {
                     textarea {
-                        height: 60vw;
-                        min-width: 0;
+                        height: 55vh;
+                        width: 95vw;
+                        min-width: none;
+                        font-size: 3rem;
 
                     }
                 }
@@ -61,15 +83,18 @@
         .auk-container {
             .auk-row {
                 .right-col {
-                    textarea {
-                        height: 80vw;
-                        min-width: 0;
 
-                    }
+                    textarea {
+                    // height: 55vh;
+                    // width: 95vw;
+                    font-size: 4vw;
+
+                }
                 }
                 .clock-col {
                     .background-line {
                         line-height: 8rem;
+                        margin-left: 15px;
 
                         height: 25rem;
                             .timer {
@@ -94,7 +119,7 @@
         .auk-container {
             .auk-row {
                 .right-col {
-                    min-width: 200px;
+                    width: 100vw;
                 }
                 .clock-col {
                     .background-line {
@@ -103,8 +128,39 @@
                             .timer {
                             p{
                                 font-size: 20vw;
+                                span {
+                                    font-size: 12vw;
+                                }
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:400px) {
+    body {
+        .auk-container {
+            .auk-row {
+                .right-col {
+                    textarea {
+                        font-size: 1.5rem;
+
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:300px) {
+    body {
+        .auk-container {
+            .auk-row {
+                .right-col {
+                    textarea {
+                        font-size: 1rem;
+
                     }
                 }
             }

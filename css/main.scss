@@ -59,11 +59,11 @@ body {
         .auk-row {
             height: inherit;
             .right-col { //Левая сторона
-                min-width: 600px;
+                // min-width: 600px;
                 textarea {
-                    width: 100%;
+                    // width: 100%;
                     height: 700px;
-                    min-height: 250px;
+                    // min-width: 650px;
                     padding: 0rem;
                     background-color: $primary-color-text;
                     border: 4px solid $primary-color-light;
