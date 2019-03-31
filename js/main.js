@@ -56,8 +56,9 @@ var timer = {
         this.sec = ((this.time - this.min * 60000) / 1000);
     },
     minSecToString: function() {
+        let _this = this;
         this.timeToMinSec();
-        let _sec = ('00' + this.sec.toFixed(0)).slice(-2);
+        let _sec = ('00' + Math.floor(_this.sec)).slice(-2);
         let _min = ('00' + this.min).slice(-2);
         this.timeString = _min + ':' + _sec + ".";
         this.timeStringEnd = ("00" + this.sec.toFixed(3)).slice(-3);
