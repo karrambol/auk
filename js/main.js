@@ -94,4 +94,4 @@ var timer = {
     }
 };
 
-setInterval(timer.dateActRefresh,100);
+setInterval(timer.dateActRefresh,500);
