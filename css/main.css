@@ -53,6 +53,7 @@ body .auk-container .auk-row .right-col textarea {
 
 body .auk-container .auk-row .clock-col {
   max-width: 600px;
+  margin-right: 0px;
 }
 
 body .auk-container .auk-row .clock-col .text-over p {
