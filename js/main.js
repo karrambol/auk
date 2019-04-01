@@ -93,5 +93,48 @@ var timer = {
     }
     }
 };
+var table = {
+    id: '#auk-sheet',
+    ref: $('#auk-sheet').val(),
+    content: $(this.id).val(),
+    lines: 0,
+    placeHoldingText: '1 В филадельфии всегда солнечно - 5000.00 р.',
+    contentArray: 0,
+    read: function () {
+        this.content = $(this.id).val();
+        return this.contentArray = this.content.split(/[\n\r]+/);
+    },
+    createText: function (Value) {
+        for (i = 1; i < Value; i++) {
+            this.placeHoldingText = this.placeHoldingText + '\n' + (i+1) + ' В филадельфии всегда солнечно - 5000.00 р.';
+        };
+        return this.placeHoldingText;
+    },
+    write: function (value) {
+        $(this.id).val(value);
+    },
+
+    hold: function (number) {
+        this.write(this.createText(number));
+    },
+    stringUp: function (numberFrom, numberTo) {
+        _this = this
+        this.read();
+        let _numberTo = this.contentArray[(numberTo-1)] + '';
+        this.contentArray[(numberTo-1)] = this.contentArray[(numberFrom-1)];
+        this.contentArray[(numberFrom-1)] = _numberTo;
+        this.write(this.contentArray.reduce(_this.reducer));
+    },
+    reducer: function (accumulator, currentValue) {
+       return accumulator + '\n' + currentValue;
+    }
+};
 
 setInterval(timer.dateActRefresh,500);
+
+// console.log(table.read());
+table.hold(11);
+// console.log(table.read());
+table.stringUp(6, 1);
+
+
