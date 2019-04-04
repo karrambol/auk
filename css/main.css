@@ -7,6 +7,7 @@ body {
   font-size: 16px;
   background: url(../img/background.png) repeat;
   color: #757575;
+  height: 100%;
 }
 
 body div.container {
@@ -32,17 +33,55 @@ body .auk-container .auk-row {
   height: inherit;
 }
 
+body .auk-container .auk-row .right-col {
+  height: inherit;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .auk-container .auk-row .right-col .buttons-row {
+  height: 40px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+body .auk-container .auk-row .right-col .buttons-row .btn {
+  height: 100%;
+  width: 50px;
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: 100%;
+  height: 3rem;
+  color: #FFFFFF;
+}
+
+body .auk-container .auk-row .right-col .buttons-row .btn:hover {
+  cursor: pointer;
+}
+
 body .auk-container .auk-row .right-col textarea {
-  height: 700px;
-  padding: 0rem;
+  height: calc(95vh - 100px);
   background-color: #FFFFFF;
   border: 4px solid #B2DFDB;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
   border-radius: 0.5rem;
   font-size: 4rem;
-  text-align: right;
+  line-height: 1;
+  margin-left: 0;
+  margin-right: 0;
   color: #212121;
+  width: 100%;
+  white-space: pre;
+  text-anchor: end;
+  text-align: end;
 }
 
 body .auk-container .auk-row .clock-col {
@@ -90,10 +129,6 @@ body .auk-container .auk-row .clock-col .background-line .timer p span {
   line-height: 4rem;
 }
 
-body .auk-container .auk-row .clock-col .background-line .timer-bot-btns {
-  margin-bottom: 20em;
-}
-
 body .auk-container .auk-row .clock-col .background-line .timer-bot-btns div button {
   max-width: 6em;
   font-size: 2rem;
@@ -129,10 +164,8 @@ body .auk-container .auk-row .clock-col .text-under p {
 
 @media screen and (max-width: 1011px) {
   body .auk-container .auk-row .right-col textarea {
-    height: 55vh;
-    width: 95vw;
-    min-width: none;
-    font-size: 3rem;
+    height: calc(95vh - 410px);
+    width: calc(100vw - 30px);
   }
   body .auk-container .auk-row .clock-col .background-line {
     line-height: 8rem;
@@ -161,8 +194,48 @@ body .auk-container .auk-row .clock-col .text-under p {
 }
 
 @media screen and (max-width: 576px) {
-  body .auk-container .auk-row .right-col {
-    width: 100vw;
+  body .auk-container .auk-row .clock-col {
+    font-size: 12vw;
+  }
+  body .auk-container .auk-row .clock-col .background-line .timer-up-btns {
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    padding: 0;
+    margin: 0;
+    max-width: unset;
+  }
+  body .auk-container .auk-row .clock-col .background-line .timer-up-btns div {
+    max-width: unset;
+    padding: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body .auk-container .auk-row .clock-col .background-line .timer-up-btns div .btn {
+    max-width: unset;
+    height: 4rem;
+    min-width: unset;
+    width: 60px;
+    font-size: 1.2rem;
+  }
+  body .auk-container .auk-row .clock-col .background-line .timer-up-btns div .start-stop-btn {
+    margin-right: 5px;
+    font-size: 1.2rem;
+  }
+  body .auk-container .auk-row .clock-col .background-line .timer-up-btns div .refresh-btn {
+    margin-left: 5px;
+    font-size: 1.2rem;
+  }
+  body .auk-container .auk-row .clock-col .background-line .timer-up-btns div button {
+    max-width: unset;
+    height: 4rem;
+    min-width: unset;
+    width: 60px;
+    font-size: 1.2rem;
+  }
+  body .auk-container .auk-row .clock-col .background-line .timer-up-btns div button {
+    font-size: 1.2rem;
   }
   body .auk-container .auk-row .clock-col .background-line .timer p {
     font-size: 20vw;
@@ -170,9 +243,89 @@ body .auk-container .auk-row .clock-col .text-under p {
   body .auk-container .auk-row .clock-col .background-line .timer p span {
     font-size: 12vw;
   }
+  body .auk-container .auk-row .clock-col .text-over p {
+    font-size: 4vw;
+  }
+  body .auk-container .auk-row .clock-col .text-under p {
+    font-size: 4vw;
+  }
 }
 
 @media screen and (max-width: 400px) {
+  body .auk-container .auk-row .background-line .timer-up-btns {
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    padding: 0;
+    margin: 0;
+    max-width: unset;
+  }
+  body .auk-container .auk-row .background-line .timer-up-btns div {
+    max-width: unset;
+    padding: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body .auk-container .auk-row .background-line .timer-up-btns div .btn {
+    max-width: unset;
+    height: 4rem;
+    min-width: unset;
+    width: 60px;
+    font-size: 1.2rem;
+  }
+  body .auk-container .auk-row .background-line .timer-up-btns div .start-stop-btn {
+    margin-right: 5px;
+    font-size: 1.2rem;
+  }
+  body .auk-container .auk-row .background-line .timer-up-btns div .refresh-btn {
+    margin-left: 5px;
+    font-size: 1.2rem;
+  }
+  body .auk-container .auk-row .background-line .timer-up-btns div button {
+    max-width: unset;
+    height: 4rem;
+    min-width: unset;
+    width: 60px;
+    font-size: 1.2rem;
+  }
+  body .auk-container .auk-row .background-line .timer-bot-btns {
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    padding: 0;
+    margin: 0;
+    max-width: unset;
+  }
+  body .auk-container .auk-row .background-line .timer-bot-btns div {
+    max-width: unset;
+    padding: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body .auk-container .auk-row .background-line .timer-bot-btns div .btn {
+    max-width: unset;
+    height: 4rem;
+    min-width: unset;
+    width: 60px;
+    font-size: 1.2rem;
+  }
+  body .auk-container .auk-row .background-line .timer-bot-btns div .start-stop-btn {
+    margin-right: 5px;
+    font-size: 1.2rem;
+  }
+  body .auk-container .auk-row .background-line .timer-bot-btns div .refresh-btn {
+    margin-left: 5px;
+    font-size: 1.2rem;
+  }
+  body .auk-container .auk-row .background-line .timer-bot-btns div button {
+    max-width: unset;
+    height: 4rem;
+    min-width: unset;
+    width: 60px;
+    font-size: 1.2rem;
+  }
   body .auk-container .auk-row .right-col textarea {
     font-size: 1.5rem;
   }

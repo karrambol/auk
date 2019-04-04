@@ -1,3 +1,47 @@
+@mixin btn-400 {
+    
+        align-items: stretch;
+        padding: 0;
+        margin: 0;
+        max-width: unset;
+        div {
+            max-width: unset;
+            padding: 0;
+            align-items: center;
+                
+            .btn {
+                max-width: unset;
+                height: 4rem;
+                min-width: unset;
+                width: 60px;
+                font-size: 1.2rem;
+            }
+            .start-stop-btn {
+                margin-right: 5px;
+                font-size: 1.2rem;
+            }
+            .refresh-btn {
+                margin-left: 5px;
+                font-size: 1.2rem;
+            }
+            
+
+
+            button {
+                max-width: unset;
+                height: 4rem;
+                min-width: unset;
+                width: 60px;
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+
+
+
+
+
 @media screen and (max-width:1300px) {
     body {
         .auk-container {
@@ -46,10 +90,10 @@
             .auk-row {
                 .right-col {
                     textarea {
-                        height: 55vh;
-                        width: 95vw;
-                        min-width: none;
-                        font-size: 3rem;
+                        height: calc(95vh - 410px);
+                        width: calc(100vw - 30px);
+                        // min-width: none;
+                        // font-size: 3rem;
 
                     }
                 }
@@ -119,11 +163,20 @@
         .auk-container {
             .auk-row {
                 .right-col {
-                    width: 100vw;
+                    // width: 100vw;
                 }
                 .clock-col {
+                    font-size: 12vw;
                     .background-line {
-
+                        .timer-up-btns {
+                            @include btn-400;
+                            div {
+                                button {
+                                // margin-left: 40px;
+                                font-size: 1.2rem;
+                                }
+                            }
+                        }
                         
                             .timer {
                             p{
@@ -134,6 +187,17 @@
                             }
                         }
                     }
+                    .text-over {
+                        p {
+                            font-size: 4vw;
+                        }
+                    }
+                    .text-under {
+
+                        p {
+                            font-size: 4vw;
+                        }
+                    }       
                 }
             }
         }
@@ -143,6 +207,18 @@
     body {
         .auk-container {
             .auk-row {
+                .background-line {
+                    .timer-up-btns {
+                        @include btn-400
+                }
+
+
+
+
+                    .timer-bot-btns {
+                        @include btn-400
+                }
+            }
                 .right-col {
                     textarea {
                         font-size: 1.5rem;
@@ -157,6 +233,9 @@
     body {
         .auk-container {
             .auk-row {
+                .background-line {
+                    
+                }
                 .right-col {
                     textarea {
                         font-size: 1rem;

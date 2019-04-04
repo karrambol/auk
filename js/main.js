@@ -31,13 +31,15 @@ var timer = {
         let _this = this;
         this.timerID = setInterval(function () {_this.smartTick(tickValue);}, tickValue, tickValue);
         } else {console.log("already started");}
-        this.textUnderShow(true);
+        this.textUnderShow(true);        
+        document.querySelector('.start-stop-btn').innerHTML = 'СТОП';
     },
     stop: function() {
         clearInterval(this.timerID);
         this.timerID = 0;
         timer.clockTimeFieldRefresh();
         this.textUnderShow(false);
+        document.querySelector('.start-stop-btn').innerHTML = 'СТАРТ';
     },
     addTime: function(addValue) {
         this.time += addValue;
@@ -93,20 +95,24 @@ var timer = {
     }
     }
 };
+var _this = 0;
 var table = {
+    selectorPos: 0,
     id: '#auk-sheet',
     ref: $('#auk-sheet').val(),
     content: $(this.id).val(),
     lines: 0,
-    placeHoldingText: '1 В филадельфии всегда солнечно - 5000.00 р.',
-    contentArray: 0,
+    placeHoldingText: '1 Бегущий по лезвию 2049 - 5000 р.',
+    contentArray: [0],
+    isToped: false,
     read: function () {
         this.content = $(this.id).val();
-        return this.contentArray = this.content.split(/[\n\r]+/);
+        this.contentArray = this.content.split(/[\n\r]+/);
+        return this.contentArray;
     },
     createText: function (Value) {
         for (i = 1; i < Value; i++) {
-            this.placeHoldingText = this.placeHoldingText + '\n' + (i+1) + ' В филадельфии всегда солнечно - 5000.00 р.';
+            this.placeHoldingText = this.placeHoldingText + '\n' + (i+1) + ' Бегущий по лезвию 2049 - 5000 р.';
         };
         return this.placeHoldingText;
     },
@@ -117,7 +123,7 @@ var table = {
     hold: function (number) {
         this.write(this.createText(number));
     },
-    stringUp: function (numberFrom, numberTo) {
+    stringSwap: function (numberFrom, numberTo) {
         _this = this
         this.read();
         let _numberTo = this.contentArray[(numberTo-1)] + '';
@@ -127,14 +133,121 @@ var table = {
     },
     reducer: function (accumulator, currentValue) {
        return accumulator + '\n' + currentValue;
-    }
+    },
+    stringUp: function (number) {
+        if (number == 1) {return};
+        this.stringSwap(number, number-1);
+    },
+    stringTop: function (number) {
+        for (i = number; i > 1; i-- ) {
+            this.stringSwap(i, (i-1));
+        };
+    },
+    stringUpBtn: function () {
+        _this = this;
+        this.read();
+        this.selector();
+        this.isToped = false;
+        console.log(this.selectorPos);
+        this.contentArray.reduce(_this.strUpBtnReducer, 0);
+    },
+    strUpBtnReducer: function (acc, str, num) {
+        let accPrev = acc;
+        acc = acc + str.length + 1;
+        let prevLength = str.length;
+        if (acc > _this.selectorPos && _this.isToped == false) {
+            _this.stringUp(num+1); 
+            _this.isToped = true;
+            _this.selertorPlace(accPrev-1-prevLength);
+        };
+        
+        return acc;
+    },
+    stringTopBtn: function () {
+        _this = this;
+        this.read();
+        this.selector();
+        this.isToped = false;
+        console.log(this.selectorPos);
+        this.contentArray.reduce(_this.strTopBtnReducer, 0);       
+    },
+    strTopBtnReducer: function (acc, str, num) {
+        let prevAcc = acc;
+        acc = acc + str.length + 1;
+        if (acc > _this.selectorPos && _this.isToped == false) {
+            _this.stringTop(num+1); 
+            _this.isToped = true;
+            _this.selertorPlace(prevAcc); 
+        } else { return acc;};
+        return acc;
+    },
+    
+    selector: function() {
+        return this.selectorPos =  $('#auk-sheet').prop("selectionStart");
+    },
+    selertorPlace: function (pos) {
+        if (pos >= 0) {
+        $('#auk-sheet').prop("selectionStart", pos);
+        $('#auk-sheet').prop("selectionEnd", pos);
+        $('#auk-sheet').focus();
+        } else {
+        $('#auk-sheet').prop("selectionStart", 0);
+        $('#auk-sheet').prop("selectionEnd", 0);
+        $('#auk-sheet').focus();
+        }
+
+    },
+    fzMulti: function (mult) {
+        let fzCurrent = $('#auk-sheet').css('font-size');
+        let fzNew = parseInt(fzCurrent) * mult;
+        $('#auk-sheet').css('font-size', fzNew + 'px');
+    },
+    lhMulti: function (mult) {
+        let lhCurrent = $('#auk-sheet').css('line-height');
+        let fzCurrent = $('#auk-sheet').css('font-size');
+        console.log(lhCurrent);
+        let lhCur = parseInt(lhCurrent) / parseInt(fzCurrent);
+        let lhNew = lhCur * mult;
+        $('#auk-sheet').css('line-height', lhNew);
+    },
+
+    
 };
 
 setInterval(timer.dateActRefresh,500);
 
 // console.log(table.read());
-table.hold(11);
+// table.hold(25);
 // console.log(table.read());
-table.stringUp(6, 1);
+// table.stringUp(6);
+// table.stringTop(8);
+// $(table.id).blur();
 
 
+
+table.read();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// document.getElementById('buttons-col').oninput = buttonsRefresh();
+
+
+
+
+// input1.oninput = function() {
+//     input2.value = this.value;
+//     input2.dispatchEvent(new Event('input'));
+//   };

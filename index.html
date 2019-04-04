@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+	<!-- font avesome -->
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,6 +10,7 @@
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 	<title>Аукцион</title>
 </head>
@@ -27,11 +29,20 @@
 				</div>
 			</header>
 		</div>
-		<div class="auk-container container-fluid col-md-12 col-sm-11">
+		<div class="auk-container container-fluid col-md-12 col-sm-12">
 			<div class="auk-row row justify-content-center justify-self-center">
 				<div class="right-col col">
-					<textarea class="col align-self-center" name="auk-sheet" id="auk-sheet" placeholder="Список лотов"></textarea>
+					<div class="row  buttons-row justify-content-end">
+						<div type="buton" title = "+ Ширина шрифта" class="btn string-up-btn btn-dark" onclick="table.fzMulti(1.1)"><i class="fas fa-text-height 1"></i> +</div>
+						<div type="buton" title = "- Ширина шрифта" class="btn string-top-btn btn-dark" onclick="table.fzMulti(0.9)"><i class="fas fa-text-height 2"></i> -</div>
+						<div type="buton" title = "+ Межстрочный интервал" class="btn string-up-btn btn-dark" onclick="table.lhMulti(1.1)"><i class="fas fa-align-justify"></i><i class="fas fa-sort"></i>+</div>
+						<div type="buton" title = "- Межстрочный интервал" class="btn string-top-btn btn-dark" onclick="table.lhMulti(0.9)"><i class="fas fa-align-justify"></i><i class="fas fa-sort"></i>-</div>
+						<div type="buton" title = "Переместить строку с курсором на 1 выше" class="btn string-up-btn btn-dark" onclick="table.stringUpBtn()"><i class="fas fa-angle-up"></i></div>
+						<div type="buton" title = "Переместить строку с курсором на 1 место" class="btn string-top-btn btn-dark" onclick="table.stringTopBtn()"><i class="fas fa-angle-double-up"></i></div>
+					</div>		
+					<textarea class="row align-self-left" name="auk-sheet" id="auk-sheet" placeholder="Список лотов"></textarea>	
 				</div>
+			
 
 
 				<div class="clock-col row col align-content-center">
@@ -47,15 +58,15 @@
 
 
 					<div class="background-line align-content-between col align-self-center">
-						<div class="timer-up-btns row d-flex align-items-center justify-content-center">
-							<div class="col-3 justify-content-end">
-									<button class="col-12 start-stop-btn btn btn-dark" onclick="timer.addTime(timer.minSecToTime(1, 0))">+1</button>
+						<div class="timer-up-btns row d-flex align-items-center justify-content-center d-flex">
+							<div class="col-3 justify-content-center align-items-center">
+									<button class="col-12 1-btn btn btn-dark" onclick="timer.addTime(timer.minSecToTime(1, 0))">+1</button>
 							</div>
-							<div class="col-3 justify-content-end">
-									<button class="col-12 start-stop-btn btn btn-dark" onclick="timer.addTime(timer.minSecToTime(2, 0))">+2</button>
+							<div class="col-3 justify-content-center">
+									<button class="col-12 2-btn btn btn-dark" onclick="timer.addTime(timer.minSecToTime(2, 0))">+2</button>
 							</div>
-							<div class="col-3 justify-content-end">
-									<button class="col-12 start-stop-btn btn btn-dark" onclick="timer.setTime(timer.minSecToTime(10, 0))">=10</button>
+							<div class="col-3 justify-content-center">
+									<button class="col-12 10-btn btn btn-dark" onclick="timer.setTime(timer.minSecToTime(10, 0))">=10</button>
 							</div>
 
 
@@ -70,7 +81,7 @@
 
 						<div class="timer-bot-btns row d-flex align-items-center justify-content-center">
 							<div class="col-4 justify-content-end">
-								<button class="col-12 col-sm-3 start-stop-btn btn btn-success" onclick="timer.startStop(61)">Старт/стоп</button>
+								<button class="col-12 col-sm-3 start-stop-btn btn btn-success" onclick="timer.startStop(61)">СТАРТ</button>
 							</div>
 							<div class="col-4 col-sm-3 justify-content-start">
 								<button class="refresh-btn btn btn-danger text-uppercase col-12" onclick="timer.clear()">Сброс</button>
@@ -95,18 +106,6 @@
 	</div>
 </div>
 
-
-
-				
-		<!-- Футер -->
-
-		<!-- <footer class="container">
-			<row class="text-center">
-				<div class="col">
-					</div>
-			</row>
-		</footer> -->
-	
 
 <!-- Скрипты -->
 	<script src="js/jquery-3.3.1.min.js"></script>

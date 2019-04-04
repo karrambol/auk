@@ -54,25 +54,64 @@ body {
             }
         }
     }
+    height: 100%;
     //Основная часть
     .auk-container {
+        
         .auk-row {
             height: inherit;
             .right-col { //Левая сторона
                 // min-width: 600px;
+                height: inherit;
+                align-items: center;
+                justify-content: center;
+
+                .buttons-row {
+                    height: 40px;
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+                    // margin-bottom: 10px;
+                    justify-content: left;
+                    align-content: center;                    
+                    .btn {
+                        height: 100%;
+                        // border: 1px solid #000;
+                        width: 50px;
+                        margin-left: 15px;
+                        margin-right: 15px;
+                        font-size: 100%;
+                        // line-height: inherit;
+                        height: 3rem;
+                        // text-align: center;
+                        color: $primary-color-text;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                // padding-left: 30px;
                 textarea {
+                    height: calc(95vh - 100px);
                     // width: 100%;
-                    height: 700px;
+                    // height: 700px;
                     // min-width: 650px;
-                    padding: 0rem;
+                    // padding: 0rem;
                     background-color: $primary-color-text;
                     border: 4px solid $primary-color-light;
-                    margin-top: 1.5rem;
-                    margin-bottom: 1.5rem;
+                    // margin: 1.5rem;
+                    // margin-bottom: 1.5rem;
                     border-radius: 0.5rem;
                     font-size: 4rem;
-                    text-align: right;
+                    line-height: 1.5;
+                    margin-left: 0;
+                    margin-right: 0;
                     color: $primary-text-color;
+                    width: 100%;
+                    white-space: pre;
+                    text-anchor: end;  
+                    text-align: end;
+                
                 }
             }    
             .clock-col { //Правая сторона (часы)
@@ -124,7 +163,7 @@ body {
                         }
                     }
                     .timer-bot-btns {
-                        margin-bottom: 20em;
+                        // margin-bottom: 20em;
                         div {
                             button {
                                 max-width: 6em;
