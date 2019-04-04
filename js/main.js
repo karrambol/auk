@@ -95,7 +95,9 @@ var timer = {
     }
     }
 };
+var prevLength = 0;
 var _this = 0;
+var prevAcc = 0;
 var table = {
     selectorPos: 0,
     id: '#auk-sheet',
@@ -154,13 +156,13 @@ var table = {
     strUpBtnReducer: function (acc, str, num) {
         let accPrev = acc;
         acc = acc + str.length + 1;
-        let prevLength = str.length;
+        
         if (acc > _this.selectorPos && _this.isToped == false) {
             _this.stringUp(num+1); 
             _this.isToped = true;
             _this.selertorPlace(accPrev-1-prevLength);
         };
-        
+        prevLength = str.length;
         return acc;
     },
     stringTopBtn: function () {
@@ -172,13 +174,16 @@ var table = {
         this.contentArray.reduce(_this.strTopBtnReducer, 0);       
     },
     strTopBtnReducer: function (acc, str, num) {
-        let prevAcc = acc;
+        accPrev = acc;
         acc = acc + str.length + 1;
+        curLength = str.length+1;
         if (acc > _this.selectorPos && _this.isToped == false) {
             _this.stringTop(num+1); 
             _this.isToped = true;
-            _this.selertorPlace(prevAcc); 
-        } else { return acc;};
+            _this.selertorPlace(acc - prevLength);
+            console.log(accPrev - prevLength + curLength);
+        };
+        prevLength = curLength;
         return acc;
     },
     
@@ -217,7 +222,7 @@ var table = {
 setInterval(timer.dateActRefresh,500);
 
 // console.log(table.read());
-// table.hold(25);
+table.hold(25);
 // console.log(table.read());
 // table.stringUp(6);
 // table.stringTop(8);
