@@ -222,7 +222,7 @@ var table = {
 setInterval(timer.dateActRefresh,500);
 
 // console.log(table.read());
-table.hold(25);
+// table.hold(25);
 // console.log(table.read());
 // table.stringUp(6);
 // table.stringTop(8);
