@@ -6,16 +6,21 @@ var timer = {
     sec: 0,
     dateAct: new Date(),
     dateEnd: 0,
+    // Умный тик
     smartTick: function(tickValue) {
         if (this.time >= tickValue) {
             this.dateAct = new Date();
             this.time = this.dateEnd.getTime() - this.dateAct.getTime();
         } else {
-            this.clear();
-            console.log("clear");
+            clearInterval(this.timerID);
+            this.timerID = 0;
+            timer.clockTimeFieldRefresh();
+            this.time = 0;
+            document.querySelector('.start-stop-btn').innerHTML = 'СТАРТ';
         };
         timer.clockTimeFieldRefresh();
     },
+    // Ф-ция кнопки обнулить
     clear: function() {
         this.time = 0;
         this.stop();
@@ -24,6 +29,7 @@ var timer = {
         this.dateEnd = 0;
         this.textUnderShow(false);
     },
+    // Старт
     start: function(tickValue) {
         this.dateEndRefresh();
         document.getElementById("text-under-p").style.color = '#212121';
@@ -34,6 +40,7 @@ var timer = {
         this.textUnderShow(true);        
         document.querySelector('.start-stop-btn').innerHTML = 'СТОП';
     },
+    // Стоп
     stop: function() {
         clearInterval(this.timerID);
         this.timerID = 0;
@@ -41,12 +48,14 @@ var timer = {
         this.textUnderShow(false);
         document.querySelector('.start-stop-btn').innerHTML = 'СТАРТ';
     },
+    // Добавить время таймера
     addTime: function(addValue) {
         this.time += addValue;
         // if {this.time > }
         timer.clockTimeFieldRefresh();
         this.dateEndRefresh();
     },
+    // Установить время таймера
     setTime: function(setValue) {
         this.time = setValue;
         timer.clockTimeFieldRefresh();
@@ -68,27 +77,29 @@ var timer = {
     minSecToTime: function(min, sec) {
         return min*60000+sec*1000;
     },
+    // Ф-ция для кнопки старт/стоп
     startStop: function (tickValue) {
         if (this.timerID == 0) {
             this.start(tickValue);
             } else {this.stop();}
     },
+    // Обновить текстовое поле с обратным отсчётом
     clockTimeFieldRefresh: function () {
         this.minSecToString();
         document.getElementById('clockTimeField').innerHTML = this.timeString + "<span>" + this.timeStringEnd + "</span>";
-        // document.getElementById('clockTimeFieldEnd').innerHTML = this.timeStringEnd; // Какая-то фигня не понятная
     },
+    // Обновить время окончания таймера
     dateEndRefresh: function() {
-        // if (this.dateEnd == 0) {
-            
-        // } else if (this.timerID != 0) {}
+        
         this.dateEnd = new Date(new Date().getTime() + this.time);
         document.getElementById('date-end').innerHTML = ('00' + this.dateEnd.getHours().toFixed(0)).slice(-2) + ':' + ('00' + this.dateEnd.getMinutes().toFixed(0)).slice(-2) + ':' + ('00' + this.dateEnd.getSeconds().toFixed(0)).slice(-2);
     },
+    // Обновить текущее время
     dateActRefresh: function() {
         this.dateAct = new Date();
         document.getElementById('date-act').innerHTML = ('00' + this.dateAct.getHours().toFixed(0)).slice(-2) + ':' + ('00' + this.dateAct.getMinutes().toFixed(0)).slice(-2) + ':' + ('00' + this.dateAct.getSeconds().toFixed(0)).slice(-2);
     },
+    // Показывать/не показывать текст снизу
     textUnderShow: function(_set) {
         if (_set == true) {document.getElementById("text-under-p").style.color = '#212121';
         } else { document.getElementById("text-under-p").style.color = 'transparent';
@@ -107,24 +118,28 @@ var table = {
     placeHoldingText: '1 Бегущий по лезвию 2049 - 5000 р.',
     contentArray: [0],
     isToped: false,
+    // Прочитать textarea и записать в таблицу
     read: function () {
         this.content = $(this.id).val();
         this.contentArray = this.content.split(/[\n\r]+/);
         return this.contentArray;
     },
+    // Создать текст для теста
     createText: function (Value) {
         for (i = 1; i < Value; i++) {
             this.placeHoldingText = this.placeHoldingText + '\n' + (i+1) + ' Бегущий по лезвию 2049 - 5000 р.';
         };
         return this.placeHoldingText;
     },
+    // Запись текста
     write: function (value) {
         $(this.id).val(value);
     },
-
+    // Заполнить number'ом строк 
     hold: function (number) {
         this.write(this.createText(number));
     },
+    // Поменять строки numberFrom и numberTo местами
     stringSwap: function (numberFrom, numberTo) {
         _this = this
         this.read();
@@ -136,15 +151,18 @@ var table = {
     reducer: function (accumulator, currentValue) {
        return accumulator + '\n' + currentValue;
     },
+    // Поднять строку number на одну вверх
     stringUp: function (number) {
         if (number == 1) {return};
         this.stringSwap(number, number-1);
     },
+    // Поднять строку number на первое место
     stringTop: function (number) {
         for (i = number; i > 1; i-- ) {
             this.stringSwap(i, (i-1));
         };
     },
+    // Поднять строку под курсором на одну вверх
     stringUpBtn: function () {
         _this = this;
         this.read();
@@ -165,6 +183,7 @@ var table = {
         prevLength = str.length;
         return acc;
     },
+    // Поднять строку под курсором на первое место
     stringTopBtn: function () {
         _this = this;
         this.read();
@@ -186,10 +205,11 @@ var table = {
         prevLength = curLength;
         return acc;
     },
-    
+    // Определение позиции курсора
     selector: function() {
         return this.selectorPos =  $('#auk-sheet').prop("selectionStart");
     },
+    // Установка курсора в pos
     selertorPlace: function (pos) {
         if (pos >= 0) {
         $('#auk-sheet').prop("selectionStart", pos);
@@ -202,11 +222,13 @@ var table = {
         }
 
     },
+    // Мультипликация font size
     fzMulti: function (mult) {
         let fzCurrent = $('#auk-sheet').css('font-size');
         let fzNew = parseInt(fzCurrent) * mult;
         $('#auk-sheet').css('font-size', fzNew + 'px');
     },
+    // Мультипликация line heght
     lhMulti: function (mult) {
         let lhCurrent = $('#auk-sheet').css('line-height');
         let fzCurrent = $('#auk-sheet').css('font-size');
@@ -221,12 +243,7 @@ var table = {
 
 setInterval(timer.dateActRefresh,500);
 
-// console.log(table.read());
-// table.hold(25);
-// console.log(table.read());
-// table.stringUp(6);
-// table.stringTop(8);
-// $(table.id).blur();
+
 
 
 
