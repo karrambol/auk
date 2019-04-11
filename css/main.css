@@ -203,7 +203,7 @@ body .auk-container .auk-row .clock-col .text-under p {
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 575px) {
   body .auk-container .auk-row .clock-col {
     font-size: 12vw;
   }
