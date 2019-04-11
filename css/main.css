@@ -81,7 +81,7 @@ body .auk-container .auk-row .right-col textarea {
   white-space: pre;
   text-anchor: end;
   text-align: end;
-  min-height: 200px;
+  min-height: 175px;
 }
 
 body .auk-container .auk-row .clock-col {
@@ -90,6 +90,7 @@ body .auk-container .auk-row .clock-col {
 }
 
 body .auk-container .auk-row .clock-col .text-over p {
+  margin-top: 7px;
   text-align: center;
   color: #212121;
   font-size: 2rem;
@@ -108,10 +109,15 @@ body .auk-container .auk-row .clock-col .background-line {
   line-height: 8rem;
 }
 
+body .auk-container .auk-row .clock-col .background-line .timer-up-btns {
+  height: 70px;
+}
+
 body .auk-container .auk-row .clock-col .background-line .timer-up-btns div button {
   max-width: 10em;
   font-size: 2rem;
-  padding: 0;
+  height: 32px;
+  line-height: 1;
   min-width: 4em;
   min-height: 1em;
   border-radius: 8px;
@@ -127,6 +133,10 @@ body .auk-container .auk-row .clock-col .background-line .timer p {
 body .auk-container .auk-row .clock-col .background-line .timer p span {
   font-size: 8rem;
   line-height: 4rem;
+}
+
+body .auk-container .auk-row .clock-col .background-line .timer-bot-btns {
+  height: 70px;
 }
 
 body .auk-container .auk-row .clock-col .background-line .timer-bot-btns div button {
@@ -214,7 +224,7 @@ body .auk-container .auk-row .clock-col .text-under p {
   }
   body .auk-container .auk-row .clock-col .background-line .timer-up-btns div .btn {
     max-width: unset;
-    height: 4rem;
+    height: 32px;
     min-width: unset;
     width: 60px;
     font-size: 1.2rem;
@@ -229,7 +239,7 @@ body .auk-container .auk-row .clock-col .text-under p {
   }
   body .auk-container .auk-row .clock-col .background-line .timer-up-btns div button {
     max-width: unset;
-    height: 4rem;
+    height: 32px;
     min-width: unset;
     width: 60px;
     font-size: 1.2rem;
@@ -269,7 +279,7 @@ body .auk-container .auk-row .clock-col .text-under p {
   }
   body .auk-container .auk-row .background-line .timer-up-btns div .btn {
     max-width: unset;
-    height: 4rem;
+    height: 32px;
     min-width: unset;
     width: 60px;
     font-size: 1.2rem;
@@ -284,7 +294,7 @@ body .auk-container .auk-row .clock-col .text-under p {
   }
   body .auk-container .auk-row .background-line .timer-up-btns div button {
     max-width: unset;
-    height: 4rem;
+    height: 32px;
     min-width: unset;
     width: 60px;
     font-size: 1.2rem;
@@ -306,7 +316,7 @@ body .auk-container .auk-row .clock-col .text-under p {
   }
   body .auk-container .auk-row .background-line .timer-bot-btns div .btn {
     max-width: unset;
-    height: 4rem;
+    height: 32px;
     min-width: unset;
     width: 60px;
     font-size: 1.2rem;
@@ -321,7 +331,7 @@ body .auk-container .auk-row .clock-col .text-under p {
   }
   body .auk-container .auk-row .background-line .timer-bot-btns div button {
     max-width: unset;
-    height: 4rem;
+    height: 32px;
     min-width: unset;
     width: 60px;
     font-size: 1.2rem;

@@ -112,7 +112,7 @@ body {
                     white-space: pre;
                     text-anchor: end;  
                     text-align: end;
-                    min-height: 200px;
+                    min-height: 175px;
                 
                 }
             }    
@@ -121,6 +121,7 @@ body {
                 margin-right: 0px;
                 .text-over {
                     p {
+                        margin-top: 7px;
                         text-align: center;
                         color: $primary-text-color;
                         font-size: 2rem;
@@ -140,11 +141,14 @@ body {
                     border-right: none;
                     line-height: 8rem;
                     .timer-up-btns {
+                        height: 70px;
                         div {
                             button {
                                 max-width: 10em;
                                 font-size: 2rem;
-                                padding: 0;
+                                // padding: 0;
+                                height: 32px;
+                                line-height: 1;
                                 min-width: 4em;
                                 min-height: 1em;
                                 border-radius: 8px;
@@ -165,6 +169,7 @@ body {
                         }
                     }
                     .timer-bot-btns {
+                        height: 70px;
                         // margin-bottom: 20em;
                         div {
                             button {

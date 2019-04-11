@@ -168,7 +168,6 @@ var table = {
         this.read();
         this.selector();
         this.isToped = false;
-        console.log(this.selectorPos);
         this.contentArray.reduce(_this.strUpBtnReducer, 0);
     },
     strUpBtnReducer: function (acc, str, num) {
@@ -189,7 +188,6 @@ var table = {
         this.read();
         this.selector();
         this.isToped = false;
-        console.log(this.selectorPos);
         this.contentArray.reduce(_this.strTopBtnReducer, 0);       
     },
     strTopBtnReducer: function (acc, str, num) {
@@ -200,7 +198,6 @@ var table = {
             _this.stringTop(num+1); 
             _this.isToped = true;
             _this.selertorPlace(acc - prevLength);
-            console.log(accPrev - prevLength + curLength);
         };
         prevLength = curLength;
         return acc;
@@ -232,7 +229,6 @@ var table = {
     lhMulti: function (mult) {
         let lhCurrent = $('#auk-sheet').css('line-height');
         let fzCurrent = $('#auk-sheet').css('font-size');
-        console.log(lhCurrent);
         let lhCur = parseInt(lhCurrent) / parseInt(fzCurrent);
         let lhNew = lhCur * mult;
         $('#auk-sheet').css('line-height', lhNew);
