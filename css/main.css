@@ -43,6 +43,13 @@ body .auk-container .auk-row .right-col {
           justify-content: center;
 }
 
+body .auk-container .auk-row .right-col .toggle-row .btn {
+  width: 150px;
+  height: 30px;
+  margin: 10px 10px 0 10px;
+  font-size: 100%;
+}
+
 body .auk-container .auk-row .right-col .buttons-row {
   -webkit-box-pack: left;
       -ms-flex-pack: left;
@@ -84,6 +91,55 @@ body .auk-container .auk-row .right-col textarea {
   min-height: 175px;
 }
 
+body .auk-container .auk-row .right-col .lot-row {
+  padding: 10px 0px;
+  font-size: 28px;
+  min-width: 600px;
+}
+
+body .auk-container .auk-row .right-col .lot-row .between {
+  width: 30px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+body .auk-container .auk-row .right-col .lot-row .between-2 {
+  width: 15px;
+}
+
+body .auk-container .auk-row .right-col .lot-row input {
+  line-height: 1;
+  border: 2px solid #B2DFDB;
+  border-radius: 5px;
+}
+
+body .auk-container .auk-row .right-col .lot-row .lot-name {
+  width: calc(100% - 294px);
+  text-align: end;
+  min-width: 300px;
+}
+
+body .auk-container .auk-row .right-col .lot-row .lot-price {
+  width: 80px;
+}
+
+body .auk-container .auk-row .right-col .lot-row .lot-add-price {
+  width: 80px;
+}
+
+body .auk-container .auk-row .right-col .lot-row button {
+  width: 30px;
+  height: 42px;
+  font-size: 100%;
+  line-height: 1;
+}
+
+body .auk-container .auk-row .right-col .add-button-row .btn {
+  width: 150px;
+  height: 30px;
+  font-size: 100%;
+}
+
 body .auk-container .auk-row .clock-col {
   max-width: 600px;
   margin-right: 0px;
@@ -123,25 +179,39 @@ body .auk-container .auk-row .clock-col .background-line .timer-up-btns div butt
   border-radius: 8px;
 }
 
+body .auk-container .auk-row .clock-col .background-line .timer {
+  height: 105px;
+}
+
 body .auk-container .auk-row .clock-col .background-line .timer p {
+  height: 105px;
   font-size: 12rem;
+  line-height: 1;
   text-align: center;
+  text-justify: center;
   color: #FFFFFF;
   padding-top: 0;
+  margin-bottom: 0;
 }
 
 body .auk-container .auk-row .clock-col .background-line .timer p span {
   font-size: 8rem;
-  line-height: 4rem;
+  line-height: 1;
 }
 
 body .auk-container .auk-row .clock-col .background-line .timer-bot-btns {
   height: 70px;
 }
 
+body .auk-container .auk-row .clock-col .background-line .timer-bot-btns div {
+  height: 32px;
+}
+
 body .auk-container .auk-row .clock-col .background-line .timer-bot-btns div button {
+  height: 32px;
   max-width: 6em;
   font-size: 2rem;
+  margin: 0;
   padding: 0;
   min-width: 5em;
   min-height: 1em;

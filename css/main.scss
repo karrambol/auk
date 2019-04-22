@@ -65,7 +65,16 @@ body {
                 height: inherit;
                 align-items: center;
                 justify-content: center;
+                .toggle-row {
+                    
+                    .btn {
+                        width: 150px;
+                        height: 30px;
+                        margin: 10px 10px 0 10px;
+                        font-size: 100%;
 
+                    }
+                }
                 .buttons-row {
                     // height: 40px;
                     
@@ -115,6 +124,51 @@ body {
                     min-height: 175px;
                 
                 }
+                .lot-row {
+                    padding: 10px 0px;
+                    font-size: 28px;
+                    min-width: 600px;
+                    
+                    .between {
+                        width: 30px;
+                        text-align: center;
+                        color: $primary-color-text;
+                    }
+                    .between-2 {
+                        width: 15px;
+                    }
+                    input {
+                        // height: 30px;
+                        line-height: 1;
+                        border: 2px solid $primary-color-light;
+                        border-radius: 5px;
+                    }
+                    .lot-name {
+                        width: calc(100% - 294px);
+                        text-align: end;
+                        min-width: 300px;
+                    }
+                    .lot-price {
+                        width: 80px;
+                    }
+                    .lot-add-price {
+                        width: 80px;
+                    }
+                    button {
+                        width: 30px;
+                        height: 42px;
+                        font-size: 100%;
+                        line-height: 1;
+                    }
+                }
+                .add-button-row {
+                    .btn {
+                        width: 150px;
+                        height: 30px;
+                        font-size: 100%;
+                    }
+                }
+
             }    
             .clock-col { //Правая сторона (часы)
                 max-width: 600px;
@@ -156,25 +210,37 @@ body {
                         }
                     }
                     .timer {
+                        height: 105px;
+                        
                         p { 
+                            height: 105px;
                             font-size: 12rem;
+                            line-height: 1;
                             text-align: center;
+                            text-justify: center;
                             // font-weight: bold;
                             color: $primary-color-text;
                             padding-top: 0;
+                            margin-bottom: 0;
                             span {
                                 font-size: 8rem;
-                                line-height: 4rem;
+                                line-height: 1;
                             }
                         }
+                        
                     }
                     .timer-bot-btns {
                         height: 70px;
                         // margin-bottom: 20em;
                         div {
+                            height: 32px;
+
+                            
                             button {
+                                height: 32px;
                                 max-width: 6em;
                                 font-size: 2rem;
+                                margin: 0;
                                 padding: 0;
                                 min-width: 5em;
                                 min-height: 1em;

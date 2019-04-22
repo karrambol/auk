@@ -237,6 +237,104 @@ var table = {
     
 };
 
+
+var auto = {
+    
+    content: [],
+
+    names: [],
+    prices: [],
+    adds:[],
+    container: $('#auto-sheet'),
+    addLot: () => {
+        let i = 1 + $('#auto-sheet').children().length;
+        $('#auto-sheet').append('<div class="row lot-row justify-content-center" id="lot-' + i + '"><input type="text" class="lot-name" id="name-' + i + '"> <div class="between">-</div> <input type="number" class="lot-price" onchange="auto.sorting()" id="price-' + i + '"> <div class="between">р.</div> <input type="number" class="lot-add-price" id="add-' + i + '"><div class="between between-2"></div> <button type="button" class="btn btn-dark" onclick="auto.addPrice(' + i + '), auto.sorting();">+</button></div>');
+        
+    },
+    read: () => {
+        let a = $('#auto-sheet').children().length;
+        
+        for (i=1; i <= a; i++) {
+            if (auto.content.length < i) {auto.content.push({name: '', price: '', add: ''})};
+            auto.content[(i-1)].name = document.getElementById('name-' + i).value;
+            auto.content[(i-1)].price = parseFloat(document.getElementById('price-' + i).value);
+            auto.content[(i-1)].add = parseFloat(document.getElementById('add-' + i).value);           
+        };
+        
+    },
+    write: () => {
+        a = auto.content.length;
+        for (i=1; i <= a; i++) {
+            document.getElementById('name-' + i).value = auto.content[(i-1)].name;
+            document.getElementById('price-' + i).value = auto.content[(i-1)].price;
+            document.getElementById('add-' + i).value = auto.content[(i-1)].add;           
+        };
+    },
+    addPrice: (num) => {
+        
+        if ( document.getElementById('price-' + num).value == '') {document.getElementById('price-' + num).value = 0}
+        document.getElementById('price-' + num).value = 0 + parseInt(document.getElementById('price-' + num).value) + parseInt(document.getElementById('add-' + num).value);
+
+    },
+    sorting: () => {
+        auto.read();
+        auto.content.sort(function (a, b) {
+            if (a.price > b.price) {
+              return -1;
+            }
+            if (a.price < b.price) {
+              return 1;
+            }
+            return 0;
+          });
+
+          auto.write();
+    },
+
+
+
+};
+
+const legacyOn = () => {
+    document.getElementById('auto-container').style = 'display: none;';
+    document.getElementById('legacy-sheet').style = 'display: unset;';
+    for (i=0; i<auto.content.length; i++) {
+    table.contentArray[i] = auto.content[i].name + ' - ' + auto.content[i].price + ' р.';
+    console.dir(table.contentArray);
+    table.write(table.contentArray.reduce(table.reducer));
+    };
+};
+const autoOn = () => {
+    document.getElementById('auto-container').style = 'display: unset;';
+    document.getElementById('legacy-sheet').style = 'display: none;';
+}
+
+
+
+const autoHold = (num) => {
+    for (i=1; i<num; i++) {
+        auto.addLot();
+    };
+    auto.read();
+    for (i=1; i<=num; i++) {
+        auto.content[(i-1)].name = i + ' Скотт пилигрим против всех';
+        auto.content[(i-1)].price = i*1000;
+        auto.content[(i-1)].add = i*100;
+    };
+    auto.write();
+};
+
+
+// autoHold(10);
+
+// console.dir(auto.content[0].name);
+
+
+
+
+
+
+
 setInterval(timer.dateActRefresh,500);
 
 

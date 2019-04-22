@@ -32,15 +32,29 @@
 		<div class="auk-container container-fluid col-md-12 col-sm-12">
 			<div class="auk-row row justify-content-center justify-self-center">
 				<div class="right-col col">
-					<div class="row  buttons-row justify-content-end">
-						<div type="buton" title = "+ Ширина шрифта" class="btn string-up-btn btn-dark" onclick="table.fzMulti(1.1)"><i class="fas fa-text-height 1"></i> +</div>
-						<div type="buton" title = "- Ширина шрифта" class="btn string-top-btn btn-dark" onclick="table.fzMulti(0.9)"><i class="fas fa-text-height 2"></i> -</div>
-						<div type="buton" title = "+ Межстрочный интервал" class="btn string-up-btn btn-dark" onclick="table.lhMulti(1.1)"><i class="fas fa-align-justify"></i><i class="fas fa-sort"></i>+</div>
-						<div type="buton" title = "- Межстрочный интервал" class="btn string-top-btn btn-dark" onclick="table.lhMulti(0.9)"><i class="fas fa-align-justify"></i><i class="fas fa-sort"></i>-</div>
-						<div type="buton" title = "Переместить строку с курсором на 1 выше" class="btn string-up-btn btn-dark" onclick="table.stringUpBtn()"><i class="fas fa-angle-up"></i></div>
-						<div type="buton" title = "Переместить строку с курсором на 1 место" class="btn string-top-btn btn-dark" onclick="table.stringTopBtn()"><i class="fas fa-angle-double-up"></i></div>
-					</div>		
-					<textarea class="row align-self-left" name="auk-sheet" id="auk-sheet" placeholder="Список лотов"></textarea>	
+					<div class="row  toggle-row justify-content-center"> <button type="button" class="btn btn-primary" onclick="autoOn()">Auto</button><button type="button" class="btn btn-secondary" onclick="legacyOn()">Legacy</button> </div>
+					<div class="legacy-sheet" id="legacy-sheet" style="display: none">
+						<div class="row  buttons-row justify-content-end">
+							<div type="buton" title = "+ Ширина шрифта" class="btn string-up-btn btn-dark" onclick="table.fzMulti(1.1)"><i class="fas fa-text-height 1"></i> +</div>
+							<div type="buton" title = "- Ширина шрифта" class="btn string-top-btn btn-dark" onclick="table.fzMulti(0.9)"><i class="fas fa-text-height 2"></i> -</div>
+							<div type="buton" title = "+ Межстрочный интервал" class="btn string-up-btn btn-dark" onclick="table.lhMulti(1.1)"><i class="fas fa-align-justify"></i><i class="fas fa-sort"></i>+</div>
+							<div type="buton" title = "- Межстрочный интервал" class="btn string-top-btn btn-dark" onclick="table.lhMulti(0.9)"><i class="fas fa-align-justify"></i><i class="fas fa-sort"></i>-</div>
+							<div type="buton" title = "Переместить строку с курсором на 1 выше" class="btn string-up-btn btn-dark" onclick="table.stringUpBtn()"><i class="fas fa-angle-up"></i></div>
+							<div type="buton" title = "Переместить строку с курсором на 1 место" class="btn string-top-btn btn-dark" onclick="table.stringTopBtn()"><i class="fas fa-angle-double-up"></i></div>
+						</div>		
+						<textarea class="row align-self-left" name="auk-sheet" id="auk-sheet" placeholder="Список лотов"></textarea>	
+					</div>
+					<div id="auto-container" style="display: unset">
+						<div class="auto-sheet" id="auto-sheet" style="display: unset">
+							
+							<div class="row  lot-row justify-content-center" id="lot-1">
+								<input type="text" class="lot-name" id="name-1"> <div class="between">-</div> <input type="number" onchange="auto.sorting()" class="lot-price" id="price-1"> <div class="between">р.</div> <input type="number" class="lot-add-price" id="add-1"><div class="between between-2"></div> <button type="button" class="btn btn-dark" onclick="auto.addPrice(1), auto.sorting()">+</button>
+							</div>
+							
+						</div>
+						<div class="row add-button-row justify-content-center"> <button type="button" class="btn btn-primary" onclick="auto.addLot()">+</button></div>
+					</div>
+					
 				</div>
 			
 
@@ -58,7 +72,7 @@
 
 
 					<div class="background-line align-content-between col align-self-center">
-						<div class="timer-up-btns row d-flex align-items-center justify-content-center d-flex">
+						<div class="timer-up-btns row d-flex align-items-center justify-content-center">
 							<div class="d-flex col-3 justify-content-center align-content-center">
 									<button class="col-8 col-sm-12 1-btn btn btn-dark" onclick="timer.addTime(timer.minSecToTime(1, 0))">+1</button>
 							</div>
@@ -74,17 +88,18 @@
 						</div>
 
 
-						<div class="timer row justify-content-center">
-							<p class="col-12  justify-content-center text-align-center" id="clockTimeField">10:00.<span id="clockTimeFieldEnd">000</span></p>
+						<div class="timer row d-flex align-items-center justify-content-center">
+							
+							<p class="col d-flex align-items-center justify-content-center" id="clockTimeField">10:00.<span id="clockTimeFieldEnd">000</span></p>
 						</div>
 
 
 						<div class="timer-bot-btns row d-flex align-items-center justify-content-center">
-							<div class="col-4 justify-content-end">
-								<button class="col-12 col-sm-3 start-stop-btn btn btn-success" onclick="timer.startStop(61)">СТАРТ</button>
+							<div class="d-flex col-4 justify-content-center align-content-center">
+								<button class="col-8 col-sm-12 start-stop-btn btn btn-success" onclick="timer.startStop(61)">СТАРТ</button>
 							</div>
-							<div class="col-4 col-sm-3 justify-content-start">
-								<button class="refresh-btn btn btn-danger text-uppercase col-12" onclick="timer.clear()">Сброс</button>
+							<div class="d-flex col-4 justify-content-center align-content-center">
+								<button class="refresh-btn btn btn-danger text-uppercase col-8 col-sm-12" onclick="timer.clear()">Сброс</button>
 							</div>
 						</div>
 					</div>
