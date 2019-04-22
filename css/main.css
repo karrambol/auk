@@ -124,7 +124,7 @@ body .auk-container .auk-row .right-col .lot-row .lot-add-price {
 body .auk-container .auk-row .right-col .lot-row #title-1,
 body .auk-container .auk-row .right-col .lot-row #price-1,
 body .auk-container .auk-row .right-col .lot-row #add-1 {
-  border: 3px inset gold;
+  border: 3px solid gold;
   -webkit-box-shadow: 0 0 10px gold;
           box-shadow: 0 0 10px gold;
 }
@@ -140,7 +140,7 @@ body .auk-container .auk-row .right-col .lot-row #add-1:focus {
 body .auk-container .auk-row .right-col .lot-row #title-2,
 body .auk-container .auk-row .right-col .lot-row #price-2,
 body .auk-container .auk-row .right-col .lot-row #add-2 {
-  border: 3px inset #BDBDBD;
+  border: 3px solid #BDBDBD;
   -webkit-box-shadow: 0 0 10px #BDBDBD;
           box-shadow: 0 0 10px #BDBDBD;
 }
@@ -155,7 +155,7 @@ body .auk-container .auk-row .right-col .lot-row #add-2:focus {
 
 body .auk-container .auk-row .right-col .lot-row input {
   line-height: 1;
-  border: 3px inset #212121;
+  border: 3px solid #212121;
   border-radius: 5px;
 }
 

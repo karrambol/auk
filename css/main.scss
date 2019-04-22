@@ -152,7 +152,7 @@ body {
                     #title-1,
                     #price-1,
                     #add-1 {
-                        border: 3px inset gold;
+                        border: 3px solid gold;
                         box-shadow: 0 0 10px gold;
                         &:focus {
                             border: 3px solid $accent-color;
@@ -162,7 +162,7 @@ body {
                     #title-2,
                     #price-2,
                     #add-2 {
-                        border: 3px inset $divider-color;
+                        border: 3px solid $divider-color;
                         box-shadow: 0 0 10px $divider-color;
                         &:focus {
                             border: 3px solid $accent-color;
@@ -172,7 +172,7 @@ body {
                     input {
                         // height: 30px;
                         line-height: 1;
-                        border: 3px inset $primary-text-color;
+                        border: 3px solid $primary-text-color;
                         border-radius: 5px;
                         &:focus {
                             border: 3px solid $accent-color;
