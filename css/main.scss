@@ -140,20 +140,61 @@ body {
                     input {
                         // height: 30px;
                         line-height: 1;
-                        border: 2px solid $primary-color-light;
+                        border: 3px solid $primary-color-dark;
                         border-radius: 5px;
+                        &:focus {
+                            border: 3px solid $accent-color;
+                            box-shadow: 0 0 50px silver;
+                        }
+
+
+                        input[type='number'] {
+                            -moz-appearance:textfield;
+                        }
+                        
+                        input::-webkit-outer-spin-button,
+                        input::-webkit-inner-spin-button {
+                            -webkit-appearance: none;
+                        }
+
+
                     }
-                    .lot-name {
-                        width: calc(100% - 294px);
+                    .lot-title {
+                        width: calc(100% - 324px);
                         text-align: end;
-                        min-width: 300px;
+                        min-width: 200px;
                     }
                     .lot-price {
-                        width: 80px;
+                        width: 95px;
                     }
                     .lot-add-price {
-                        width: 80px;
+                        width: 95px;
                     }
+                    #title-1,
+                    #price-1,
+                    #add-1 {
+                        border: 3px solid gold;
+                        box-shadow: 0 0 10px gold;
+                        &:focus {
+                            border: 3px solid $accent-color;
+                            box-shadow: 0 0 25px $accent-color;
+                        }
+                    }
+                    #title-2,
+                    #price-2,
+                    #add-2 {
+                        border: 3px solid silver;
+                        box-shadow: 0 0 10px silver;
+                        &:focus {
+                            border: 3px solid $accent-color;
+                            box-shadow: 0 0 50px silver;
+                        }
+                    }
+                
+
+
+
+
                     button {
                         width: 30px;
                         height: 42px;
@@ -223,6 +264,7 @@ body {
                             padding-top: 0;
                             margin-bottom: 0;
                             span {
+                                align-self: flex-end;
                                 font-size: 8rem;
                                 line-height: 1;
                             }

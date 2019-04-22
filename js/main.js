@@ -248,24 +248,30 @@ var auto = {
     container: $('#auto-sheet'),
     addLot: () => {
         let i = 1 + $('#auto-sheet').children().length;
-        $('#auto-sheet').append('<div class="row lot-row justify-content-center" id="lot-' + i + '"><input type="text" class="lot-name" id="name-' + i + '"> <div class="between">-</div> <input type="number" class="lot-price" onchange="auto.sorting()" id="price-' + i + '"> <div class="between">р.</div> <input type="number" class="lot-add-price" id="add-' + i + '"><div class="between between-2"></div> <button type="button" class="btn btn-dark" onclick="auto.addPrice(' + i + '), auto.sorting();">+</button></div>');
-        
+        $('#auto-sheet').append('<div class="row lot-row justify-content-center" id="lot-' + i + '"><input type="text" class="lot-title" id="title-' + i + '"> <div class="between">-</div> <input type="number" class="lot-price" onchange="auto.sorting()" id="price-' + i + '"> <div class="between">р.</div> <input type="number" class="lot-add-price" id="add-' + i + '"><div class="between between-2"></div> <button type="button" class="btn btn-dark" onclick="auto.addPrice(' + i + '), auto.sorting();">+</button></div>');
+        // document.getElementById('price-' + i).value = 0;
+        // document.getElementById('add-' + i).value = 0;
     },
     read: () => {
         let a = $('#auto-sheet').children().length;
         
         for (i=1; i <= a; i++) {
-            if (auto.content.length < i) {auto.content.push({name: '', price: '', add: ''})};
-            auto.content[(i-1)].name = document.getElementById('name-' + i).value;
-            auto.content[(i-1)].price = parseFloat(document.getElementById('price-' + i).value);
-            auto.content[(i-1)].add = parseFloat(document.getElementById('add-' + i).value);           
+            if (auto.content.length < i) {auto.content.push({name: '', price: '', add: '', priceMath: '', addMath: ''})};
+            auto.content[(i-1)].name = document.getElementById('title-' + i).value;
+            auto.content[(i-1)].priceMath = auto.content[(i-1)].price = parseFloat(document.getElementById('price-' + i).value);
+            auto.content[(i-1)].addMath = auto.content[(i-1)].add = parseFloat(document.getElementById('add-' + i).value);   
+            
+            // if (isNaN(auto.content[(i-1)].price)) {auto.content[(i-1)].priceMath = 0}
+            // if (isNaN(auto.content[(i-1)].add)) {auto.content[(i-1)].addMath = 0}
+
         };
+        
         
     },
     write: () => {
         a = auto.content.length;
         for (i=1; i <= a; i++) {
-            document.getElementById('name-' + i).value = auto.content[(i-1)].name;
+            document.getElementById('title-' + i).value = auto.content[(i-1)].name;
             document.getElementById('price-' + i).value = auto.content[(i-1)].price;
             document.getElementById('add-' + i).value = auto.content[(i-1)].add;           
         };
@@ -273,16 +279,23 @@ var auto = {
     addPrice: (num) => {
         
         if ( document.getElementById('price-' + num).value == '') {document.getElementById('price-' + num).value = 0}
+        if ( document.getElementById('add-' + num).value == '') {return}
         document.getElementById('price-' + num).value = 0 + parseInt(document.getElementById('price-' + num).value) + parseInt(document.getElementById('add-' + num).value);
 
     },
     sorting: () => {
         auto.read();
         auto.content.sort(function (a, b) {
-            if (a.price > b.price) {
+            ai = a.price
+            bi = b.price
+            if (isNaN(a.price)) {ai = 0}
+            if (isNaN(b.price)) {bi = 0}
+            
+
+            if (ai > bi) {
               return -1;
             }
-            if (a.price < b.price) {
+            if (ai < bi) {
               return 1;
             }
             return 0;
@@ -311,7 +324,7 @@ const autoOn = () => {
 
 
 
-const autoHold = (num) => {
+const autoHoldTest = (num) => {
     for (i=1; i<num; i++) {
         auto.addLot();
     };
@@ -324,9 +337,17 @@ const autoHold = (num) => {
     auto.write();
 };
 
+const autoHold = (num) => {
+    for (i=1; i<num; i++) {
+        auto.addLot();
+    };
+};
 
+
+// document.getElementById('price-1').value = 0;
+// document.getElementById('add-1').value = 0;
 // autoHold(10);
-
+autoHoldTest(10);
 // console.dir(auto.content[0].name);
 
 

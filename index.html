@@ -11,7 +11,12 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<!-- Убрать стрелочки -->
+	
 
+
+
+	
 	<title>Аукцион</title>
 </head>
 
@@ -48,7 +53,7 @@
 						<div class="auto-sheet" id="auto-sheet" style="display: unset">
 							
 							<div class="row  lot-row justify-content-center" id="lot-1">
-								<input type="text" class="lot-name" id="name-1"> <div class="between">-</div> <input type="number" onchange="auto.sorting()" class="lot-price" id="price-1"> <div class="between">р.</div> <input type="number" class="lot-add-price" id="add-1"><div class="between between-2"></div> <button type="button" class="btn btn-dark" onclick="auto.addPrice(1), auto.sorting()">+</button>
+								<input type="text" class="lot-title lot-title-1" id="title-1"> <div class="between">-</div> <input type="number" onchange="auto.sorting()" class="numb lot-price lot-price-1" id="price-1"> <div class="between">р.</div> <input type="number" class="lot-add-price lot-add-price-1" id="add-1"><div class="between between-2"></div> <button type="button" class="btn btn-dark" onclick="auto.addPrice(1), auto.sorting()">+</button>
 							</div>
 							
 						</div>
@@ -96,7 +101,7 @@
 
 						<div class="timer-bot-btns row d-flex align-items-center justify-content-center">
 							<div class="d-flex col-4 justify-content-center align-content-center">
-								<button class="col-8 col-sm-12 start-stop-btn btn btn-success" onclick="timer.startStop(61)">СТАРТ</button>
+								<button class="col-8 col-sm-12 start-stop-btn btn btn-success" onclick="timer.startStop(16+61)">СТАРТ</button>
 							</div>
 							<div class="d-flex col-4 justify-content-center align-content-center">
 								<button class="refresh-btn btn btn-danger text-uppercase col-8 col-sm-12" onclick="timer.clear()">Сброс</button>
