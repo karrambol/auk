@@ -94,7 +94,7 @@ body .auk-container .auk-row .right-col textarea {
 body .auk-container .auk-row .right-col .lot-row {
   padding: 10px 0px;
   font-size: 28px;
-  min-width: 600px;
+  min-width: 500px;
 }
 
 body .auk-container .auk-row .right-col .lot-row .between {
@@ -105,27 +105,6 @@ body .auk-container .auk-row .right-col .lot-row .between {
 
 body .auk-container .auk-row .right-col .lot-row .between-2 {
   width: 15px;
-}
-
-body .auk-container .auk-row .right-col .lot-row input {
-  line-height: 1;
-  border: 3px solid #00796B;
-  border-radius: 5px;
-}
-
-body .auk-container .auk-row .right-col .lot-row input:focus {
-  border: 3px solid #448AFF;
-  -webkit-box-shadow: 0 0 50px silver;
-          box-shadow: 0 0 50px silver;
-}
-
-body .auk-container .auk-row .right-col .lot-row input input[type='number'] {
-  -moz-appearance: textfield;
-}
-
-body .auk-container .auk-row .right-col .lot-row input input::-webkit-outer-spin-button,
-body .auk-container .auk-row .right-col .lot-row input input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
 }
 
 body .auk-container .auk-row .right-col .lot-row .lot-title {
@@ -145,7 +124,7 @@ body .auk-container .auk-row .right-col .lot-row .lot-add-price {
 body .auk-container .auk-row .right-col .lot-row #title-1,
 body .auk-container .auk-row .right-col .lot-row #price-1,
 body .auk-container .auk-row .right-col .lot-row #add-1 {
-  border: 3px solid gold;
+  border: 3px inset gold;
   -webkit-box-shadow: 0 0 10px gold;
           box-shadow: 0 0 10px gold;
 }
@@ -161,17 +140,29 @@ body .auk-container .auk-row .right-col .lot-row #add-1:focus {
 body .auk-container .auk-row .right-col .lot-row #title-2,
 body .auk-container .auk-row .right-col .lot-row #price-2,
 body .auk-container .auk-row .right-col .lot-row #add-2 {
-  border: 3px solid silver;
-  -webkit-box-shadow: 0 0 10px silver;
-          box-shadow: 0 0 10px silver;
+  border: 3px inset #BDBDBD;
+  -webkit-box-shadow: 0 0 10px #BDBDBD;
+          box-shadow: 0 0 10px #BDBDBD;
 }
 
 body .auk-container .auk-row .right-col .lot-row #title-2:focus,
 body .auk-container .auk-row .right-col .lot-row #price-2:focus,
 body .auk-container .auk-row .right-col .lot-row #add-2:focus {
   border: 3px solid #448AFF;
-  -webkit-box-shadow: 0 0 50px silver;
-          box-shadow: 0 0 50px silver;
+  -webkit-box-shadow: 0 0 50px #BDBDBD;
+          box-shadow: 0 0 50px #BDBDBD;
+}
+
+body .auk-container .auk-row .right-col .lot-row input {
+  line-height: 1;
+  border: 3px inset #212121;
+  border-radius: 5px;
+}
+
+body .auk-container .auk-row .right-col .lot-row input:focus {
+  border: 3px solid #448AFF;
+  -webkit-box-shadow: 0 0 25px #BDBDBD;
+          box-shadow: 0 0 25px #BDBDBD;
 }
 
 body .auk-container .auk-row .right-col .lot-row button {

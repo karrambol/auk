@@ -248,7 +248,7 @@ var auto = {
     container: $('#auto-sheet'),
     addLot: () => {
         let i = 1 + $('#auto-sheet').children().length;
-        $('#auto-sheet').append('<div class="row lot-row justify-content-center" id="lot-' + i + '"><input type="text" class="lot-title" id="title-' + i + '"> <div class="between">-</div> <input type="number" class="lot-price" onchange="auto.sorting()" id="price-' + i + '"> <div class="between">р.</div> <input type="number" class="lot-add-price" id="add-' + i + '"><div class="between between-2"></div> <button type="button" class="btn btn-dark" onclick="auto.addPrice(' + i + '), auto.sorting();">+</button></div>');
+        $('#auto-sheet').append('<div class="row lot-row justify-content-center" id="lot-' + i + '"><input type="text" class="lot-title" id="title-' + i + '"> <div class="between">-</div> <input type="number" class="lot-price" onchange="auto.sorting()" id="price-' + i + '"> <div class="between">р.</div> <input type="number" class="lot-add-price" id="add-' + i + '"><div class="between between-2"></div> <button  title = "Добавить ставку" type="button" class="btn btn-dark" onclick="auto.addPrice(' + i + '), auto.sorting();">+</button></div>');
         // document.getElementById('price-' + i).value = 0;
         // document.getElementById('add-' + i).value = 0;
     },
@@ -258,8 +258,11 @@ var auto = {
         for (i=1; i <= a; i++) {
             if (auto.content.length < i) {auto.content.push({name: '', price: '', add: '', priceMath: '', addMath: ''})};
             auto.content[(i-1)].name = document.getElementById('title-' + i).value;
-            auto.content[(i-1)].priceMath = auto.content[(i-1)].price = parseFloat(document.getElementById('price-' + i).value);
-            auto.content[(i-1)].addMath = auto.content[(i-1)].add = parseFloat(document.getElementById('add-' + i).value);   
+            auto.content[(i-1)].price = document.getElementById('price-' + i).value;
+            auto.content[(i-1)].add = document.getElementById('add-' + i).value;  
+
+            auto.content[(i-1)].priceMath = parseFloat(document.getElementById('price-' + i).value);
+            auto.content[(i-1)].addMath = parseFloat(document.getElementById('add-' + i).value);   
             
             // if (isNaN(auto.content[(i-1)].price)) {auto.content[(i-1)].priceMath = 0}
             // if (isNaN(auto.content[(i-1)].add)) {auto.content[(i-1)].addMath = 0}
@@ -286,10 +289,10 @@ var auto = {
     sorting: () => {
         auto.read();
         auto.content.sort(function (a, b) {
-            ai = a.price
-            bi = b.price
-            if (isNaN(a.price)) {ai = 0}
-            if (isNaN(b.price)) {bi = 0}
+            ai = a.priceMath
+            bi = b.priceMath
+            if (isNaN(a.priceMath)) {ai = 0}
+            if (isNaN(b.priceMath)) {bi = 0}
             
 
             if (ai > bi) {
