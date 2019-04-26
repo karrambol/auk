@@ -124,7 +124,10 @@ body .auk-container .auk-row .right-col .lot-row .lot-add-price {
 body .auk-container .auk-row .right-col .lot-row #title-1,
 body .auk-container .auk-row .right-col .lot-row #price-1,
 body .auk-container .auk-row .right-col .lot-row #add-1 {
-  border: 3px solid gold;
+  background-color: gold;
+  color: #212121;
+  text-shadow: 25px #448AFF;
+  border: 5px outset gold;
   -webkit-box-shadow: 0 0 10px gold;
           box-shadow: 0 0 10px gold;
 }
@@ -132,7 +135,7 @@ body .auk-container .auk-row .right-col .lot-row #add-1 {
 body .auk-container .auk-row .right-col .lot-row #title-1:focus,
 body .auk-container .auk-row .right-col .lot-row #price-1:focus,
 body .auk-container .auk-row .right-col .lot-row #add-1:focus {
-  border: 3px solid #448AFF;
+  border: 5px outset #448AFF;
   -webkit-box-shadow: 0 0 25px #448AFF;
           box-shadow: 0 0 25px #448AFF;
 }
@@ -140,7 +143,9 @@ body .auk-container .auk-row .right-col .lot-row #add-1:focus {
 body .auk-container .auk-row .right-col .lot-row #title-2,
 body .auk-container .auk-row .right-col .lot-row #price-2,
 body .auk-container .auk-row .right-col .lot-row #add-2 {
-  border: 3px solid #BDBDBD;
+  background-color: silver;
+  color: #212121;
+  border: 5px outset #BDBDBD;
   -webkit-box-shadow: 0 0 10px #BDBDBD;
           box-shadow: 0 0 10px #BDBDBD;
 }
@@ -148,18 +153,20 @@ body .auk-container .auk-row .right-col .lot-row #add-2 {
 body .auk-container .auk-row .right-col .lot-row #title-2:focus,
 body .auk-container .auk-row .right-col .lot-row #price-2:focus,
 body .auk-container .auk-row .right-col .lot-row #add-2:focus {
-  border: 3px solid #448AFF;
+  border: 5px outset #448AFF;
   -webkit-box-shadow: 0 0 50px #BDBDBD;
           box-shadow: 0 0 50px #BDBDBD;
 }
 
 body .auk-container .auk-row .right-col .lot-row input {
+  background-color: #d8d8d8;
   line-height: 1;
   border: 3px solid #212121;
   border-radius: 5px;
 }
 
 body .auk-container .auk-row .right-col .lot-row input:focus {
+  background-color: white;
   border: 3px solid #448AFF;
   -webkit-box-shadow: 0 0 25px #BDBDBD;
           box-shadow: 0 0 25px #BDBDBD;

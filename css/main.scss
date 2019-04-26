@@ -152,29 +152,35 @@ body {
                     #title-1,
                     #price-1,
                     #add-1 {
-                        border: 3px solid gold;
+                        background-color: gold;
+                        color: $primary-text-color;
+                        text-shadow: 25px $accent-color;
+                        border: 5px outset gold;
                         box-shadow: 0 0 10px gold;
                         &:focus {
-                            border: 3px solid $accent-color;
+                            border: 5px outset $accent-color;
                             box-shadow: 0 0 25px $accent-color;
                         }
                     }
                     #title-2,
                     #price-2,
-                    #add-2 {
-                        border: 3px solid $divider-color;
+                    #add-2 {                        
+                        background-color: silver;
+                        color: $primary-text-color;
+                        border: 5px outset $divider-color;
                         box-shadow: 0 0 10px $divider-color;
                         &:focus {
-                            border: 3px solid $accent-color;
+                            border: 5px outset $accent-color;
                             box-shadow: 0 0 50px $divider-color;
                         }
                     }
                     input {
-                        // height: 30px;
+                        background-color: rgb(216, 216, 216);
                         line-height: 1;
                         border: 3px solid $primary-text-color;
                         border-radius: 5px;
                         &:focus {
+                            background-color: white;
                             border: 3px solid $accent-color;
                             box-shadow: 0 0 25px $divider-color;
                         }

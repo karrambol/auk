@@ -232,16 +232,10 @@ var table = {
         let lhCur = parseInt(lhCurrent) / parseInt(fzCurrent);
         let lhNew = lhCur * mult;
         $('#auk-sheet').css('line-height', lhNew);
-    },
-
-    
+    },  
 };
-
-
 var auto = {
-    
     content: [],
-
     names: [],
     prices: [],
     adds:[],
@@ -254,7 +248,6 @@ var auto = {
     },
     read: () => {
         let a = $('#auto-sheet').children().length;
-        
         for (i=1; i <= a; i++) {
             if (auto.content.length < i) {auto.content.push({name: '', price: '', add: '', priceMath: '', addMath: ''})};
             auto.content[(i-1)].name = document.getElementById('title-' + i).value;
@@ -267,9 +260,7 @@ var auto = {
             // if (isNaN(auto.content[(i-1)].price)) {auto.content[(i-1)].priceMath = 0}
             // if (isNaN(auto.content[(i-1)].add)) {auto.content[(i-1)].addMath = 0}
 
-        };
-        
-        
+        };        
     },
     write: () => {
         a = auto.content.length;
@@ -284,6 +275,7 @@ var auto = {
         if ( document.getElementById('price-' + num).value == '') {document.getElementById('price-' + num).value = 0}
         if ( document.getElementById('add-' + num).value == '') {return}
         document.getElementById('price-' + num).value = 0 + parseInt(document.getElementById('price-' + num).value) + parseInt(document.getElementById('add-' + num).value);
+        document.getElementById('add-' + num).value = '';
 
     },
     sorting: () => {
@@ -310,7 +302,6 @@ var auto = {
 
 
 };
-
 const legacyOn = () => {
     document.getElementById('auto-container').style = 'display: none;';
     document.getElementById('legacy-sheet').style = 'display: unset;';
@@ -324,9 +315,6 @@ const autoOn = () => {
     document.getElementById('auto-container').style = 'display: unset;';
     document.getElementById('legacy-sheet').style = 'display: none;';
 }
-
-
-
 const autoHoldTest = (num) => {
     for (i=1; i<num; i++) {
         auto.addLot();
@@ -339,32 +327,17 @@ const autoHoldTest = (num) => {
     };
     auto.write();
 };
-
 const autoHold = (num) => {
     for (i=1; i<num; i++) {
         auto.addLot();
     };
 };
-
-
 // document.getElementById('price-1').value = 0;
 // document.getElementById('add-1').value = 0;
 autoHold(10);
 // autoHoldTest(10);
 // console.dir(auto.content[0].name);
-
-
-
-
-
-
-
 setInterval(timer.dateActRefresh,500);
-
-
-
-
-
 table.read();
 
 
