@@ -282,10 +282,8 @@ var auto = {
         } else if (isNaN(document.getElementById('price-' + num).value)) {
             return
         }
-
         document.getElementById('price-' + num).value = 0 + Math.round((parseFloat(document.getElementById('price-' + num).value) + parseFloat(document.getElementById('add-' + num).value))*100)/100;
         document.getElementById('add-' + num).value = '';
-
     },
     sorting: () => {
         auto.read();
@@ -294,8 +292,6 @@ var auto = {
             bi = b.priceMath
             if (isNaN(a.priceMath)) {ai = 0}
             if (isNaN(b.priceMath)) {bi = 0}
-            
-
             if (ai > bi) {
               return -1;
             }
@@ -304,9 +300,9 @@ var auto = {
             }
             return 0;
           });
-
           auto.write();
     },
+    // Меняем запятые на точки в полях price и add 
     point: (num) => {
         let strOld = document.getElementById('add-' + num).value;
         let strNew = "";
@@ -318,7 +314,6 @@ var auto = {
             }
         };
         document.getElementById('add-' + num).value = strNew;
-
         strOld = document.getElementById('price-' + num).value;
         strNew = "";
         for (i=1; i <= strOld.length; i++) {
@@ -330,8 +325,6 @@ var auto = {
         };
         document.getElementById('price-' + num).value = strNew;
     }
-
-
 };
 const legacyOn = () => {
     document.getElementById('auto-container').style = 'display: none;';
