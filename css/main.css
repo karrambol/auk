@@ -10,6 +10,27 @@ body {
   height: 100%;
 }
 
+body button {
+  -webkit-box-shadow: 3px 3px 0 black;
+          box-shadow: 3px 3px 0 black;
+}
+
+body .btn-primary,
+body .btn-secondary {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+body .btn-primary {
+  -webkit-box-shadow: 3px 3px 0 #0062cc;
+          box-shadow: 3px 3px 0 #0062cc;
+}
+
+body .btn-secondary {
+  -webkit-box-shadow: 3px 3px 0 #545b62;
+          box-shadow: 3px 3px 0 #545b62;
+}
+
 body div.container {
   background-color: #00796B;
 }
@@ -110,7 +131,7 @@ body .auk-container .auk-row .right-col .lot-row .between-2 {
 }
 
 body .auk-container .auk-row .right-col .lot-row .lot-title {
-  width: calc(100% - 344px);
+  width: calc(100% - 364px);
   text-align: end;
   min-width: 200px;
 }
@@ -120,7 +141,7 @@ body .auk-container .auk-row .right-col .lot-row .lot-price {
 }
 
 body .auk-container .auk-row .right-col .lot-row .lot-add-price {
-  width: 80px;
+  width: 100px;
   font-size: 24px;
 }
 
@@ -131,16 +152,16 @@ body .auk-container .auk-row .right-col .lot-row #add-1 {
   color: #212121;
   text-shadow: 25px #448AFF;
   border: 5px outset gold;
-  -webkit-box-shadow: 0 0 10px gold;
-          box-shadow: 0 0 10px gold;
+  -webkit-box-shadow: 0 0 10px gold, 3px 3px 0 #212121;
+          box-shadow: 0 0 10px gold, 3px 3px 0 #212121;
 }
 
 body .auk-container .auk-row .right-col .lot-row #title-1:focus,
 body .auk-container .auk-row .right-col .lot-row #price-1:focus,
 body .auk-container .auk-row .right-col .lot-row #add-1:focus {
   border: 5px outset #448AFF;
-  -webkit-box-shadow: 0 0 25px #448AFF;
-          box-shadow: 0 0 25px #448AFF;
+  -webkit-box-shadow: 0 0 25px #448AFF, 3px 3px 0 #212121;
+          box-shadow: 0 0 25px #448AFF, 3px 3px 0 #212121;
 }
 
 body .auk-container .auk-row .right-col .lot-row #title-2,
@@ -149,21 +170,23 @@ body .auk-container .auk-row .right-col .lot-row #add-2 {
   background-color: silver;
   color: #212121;
   border: 5px outset #BDBDBD;
-  -webkit-box-shadow: 0 0 10px #BDBDBD;
-          box-shadow: 0 0 10px #BDBDBD;
+  -webkit-box-shadow: 0 0 10px #BDBDBD, 3px 3px 0 #212121;
+          box-shadow: 0 0 10px #BDBDBD, 3px 3px 0 #212121;
 }
 
 body .auk-container .auk-row .right-col .lot-row #title-2:focus,
 body .auk-container .auk-row .right-col .lot-row #price-2:focus,
 body .auk-container .auk-row .right-col .lot-row #add-2:focus {
   border: 5px outset #448AFF;
-  -webkit-box-shadow: 0 0 50px #BDBDBD;
-          box-shadow: 0 0 50px #BDBDBD;
+  -webkit-box-shadow: 0 0 50px #BDBDBD, 3px 3px 0 #212121;
+          box-shadow: 0 0 50px #BDBDBD, 3px 3px 0 #212121;
 }
 
 body .auk-container .auk-row .right-col .lot-row input {
+  -webkit-box-shadow: 3px 3px 0 #212121;
+          box-shadow: 3px 3px 0 #212121;
   background-color: #d8d8d8;
-  font-size: 32px;
+  font-size: 36px;
   line-height: 1;
   height: 100%;
   border: 3px solid #212121;
@@ -173,8 +196,8 @@ body .auk-container .auk-row .right-col .lot-row input {
 body .auk-container .auk-row .right-col .lot-row input:focus {
   background-color: white;
   border: 3px solid #448AFF;
-  -webkit-box-shadow: 0 0 25px #BDBDBD;
-          box-shadow: 0 0 25px #BDBDBD;
+  -webkit-box-shadow: 0 0 25px #BDBDBD, 3px 3px 0 #212121;
+          box-shadow: 0 0 25px #BDBDBD, 3px 3px 0 #212121;
 }
 
 body .auk-container .auk-row .right-col .lot-row button {
@@ -182,7 +205,7 @@ body .auk-container .auk-row .right-col .lot-row button {
   height: 42px;
   font-size: 32px;
   line-height: 1;
-  border-radius: 8px;
+  border-radius: 5px;
 }
 
 body .auk-container .auk-row .right-col .add-button-row .btn {
@@ -227,7 +250,7 @@ body .auk-container .auk-row .clock-col .background-line .timer-up-btns div butt
   line-height: 1;
   min-width: 4em;
   min-height: 1em;
-  border-radius: 8px;
+  border-radius: 5px;
 }
 
 body .auk-container .auk-row .clock-col .background-line .timer {
@@ -243,6 +266,7 @@ body .auk-container .auk-row .clock-col .background-line .timer p {
   color: #FFFFFF;
   padding-top: 0;
   margin-bottom: 0;
+  text-shadow: 4px 4px 0 black;
 }
 
 body .auk-container .auk-row .clock-col .background-line .timer p span {
@@ -268,7 +292,7 @@ body .auk-container .auk-row .clock-col .background-line .timer-bot-btns div but
   padding: 0;
   min-width: 5em;
   min-height: 1em;
-  border-radius: 8px;
+  border-radius: 5px;
 }
 
 body .auk-container .auk-row .clock-col .text-under p {
