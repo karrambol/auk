@@ -272,8 +272,16 @@ var auto = {
     },
     addPrice: (num) => {
         auto.point(num);
-        if ( document.getElementById('add-' + num).value == '') {return}
-        if ( document.getElementById('price-' + num).value == '') {document.getElementById('price-' + num).value = 0}
+        if ( document.getElementById('add-' + num).value == '') {
+            return
+        } else if (isNaN(document.getElementById('add-' + num).value)) {
+            return
+        }
+        if ( document.getElementById('price-' + num).value == '') {
+            document.getElementById('price-' + num).value = 0
+        } else if (isNaN(document.getElementById('price-' + num).value)) {
+            return
+        }
 
         document.getElementById('price-' + num).value = 0 + Math.round((parseFloat(document.getElementById('price-' + num).value) + parseFloat(document.getElementById('add-' + num).value))*100)/100;
         document.getElementById('add-' + num).value = '';
