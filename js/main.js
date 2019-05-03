@@ -357,8 +357,8 @@ const autoHold = (num) => {
 };
 // document.getElementById('price-1').value = 0;
 // document.getElementById('add-1').value = 0;
-// autoHold(10);
-autoHoldTest(10);
+autoHold(10);
+// autoHoldTest(10);
 // console.dir(auto.content[0].name);
 setInterval(timer.dateActRefresh,500);
 table.read();
