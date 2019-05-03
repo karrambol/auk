@@ -242,7 +242,7 @@ var auto = {
     container: $('#auto-sheet'),
     addLot: () => {
         let i = 1 + $('#auto-sheet').children().length;
-        $('#auto-sheet').append('<div class="row lot-row justify-content-center" id="lot-' + i + '"><input type="text" class="lot-title" id="title-' + i + '"> <div class="between">-</div> <input type="number" class="lot-price" onchange="auto.sorting()" id="price-' + i + '"> <div class="between">р.</div> <input type="number" class="lot-add-price" id="add-' + i + '"><div class="between between-2"></div> <button  title = "Добавить ставку" type="button" class="btn btn-dark" onclick="auto.addPrice(' + i + '), auto.sorting();">+</button></div>');
+        $('#auto-sheet').append('<div class="row lot-row justify-content-center" id="lot-' + i + '"><input type="text" class="form-control lot-title" id="title-' + i + '"> <div class="between">-</div> <input type="text" class="form-control bfh-number lot-price" onchange="auto.sorting(), auto.point(' + i + ')" id="price-' + i + '" data-buttons="false"> <div class="between">р.</div> <input type="text" class="form-control bfh-number lot-add-price" id="add-' + i + '" data-buttons="false"><div class="between between-2"></div> <button  title = "Добавить ставку" type="button" class="btn btn-dark" onclick="auto.addPrice(' + i + '), auto.sorting();">+</button></div>');
         // document.getElementById('price-' + i).value = 0;
         // document.getElementById('add-' + i).value = 0;
     },
@@ -271,10 +271,11 @@ var auto = {
         };
     },
     addPrice: (num) => {
-        
-        if ( document.getElementById('price-' + num).value == '') {document.getElementById('price-' + num).value = 0}
+        auto.point(num);
         if ( document.getElementById('add-' + num).value == '') {return}
-        document.getElementById('price-' + num).value = 0 + parseInt(document.getElementById('price-' + num).value) + parseInt(document.getElementById('add-' + num).value);
+        if ( document.getElementById('price-' + num).value == '') {document.getElementById('price-' + num).value = 0}
+
+        document.getElementById('price-' + num).value = 0 + Math.round((parseFloat(document.getElementById('price-' + num).value) + parseFloat(document.getElementById('add-' + num).value))*100)/100;
         document.getElementById('add-' + num).value = '';
 
     },
@@ -298,7 +299,29 @@ var auto = {
 
           auto.write();
     },
+    point: (num) => {
+        let strOld = document.getElementById('add-' + num).value;
+        let strNew = "";
+        for (i=1; i <= strOld.length; i++) {
+            if (strOld[(i-1)] == ",") { 
+                strNew = strNew + ".";
+            } else {
+                strNew = strNew + strOld[(i-1)];
+            }
+        };
+        document.getElementById('add-' + num).value = strNew;
 
+        strOld = document.getElementById('price-' + num).value;
+        strNew = "";
+        for (i=1; i <= strOld.length; i++) {
+            if (strOld[(i-1)] == ",") { 
+                strNew = strNew + ".";
+            } else {
+                strNew = strNew + strOld[(i-1)];
+            }
+        };
+        document.getElementById('price-' + num).value = strNew;
+    }
 
 
 };
@@ -334,14 +357,11 @@ const autoHold = (num) => {
 };
 // document.getElementById('price-1').value = 0;
 // document.getElementById('add-1').value = 0;
-autoHold(10);
-// autoHoldTest(10);
+// autoHold(10);
+autoHoldTest(10);
 // console.dir(auto.content[0].name);
 setInterval(timer.dateActRefresh,500);
 table.read();
-
-
-
 
 
 

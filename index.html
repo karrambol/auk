@@ -53,7 +53,13 @@
 						<div class="auto-sheet" id="auto-sheet" style="display: unset">
 							
 							<div class="row  lot-row justify-content-center" id="lot-1">
-								<input type="text" class="lot-title lot-title-1" id="title-1"> <div class="between">-</div> <input type="number" onchange="auto.sorting()" class="numb lot-price lot-price-1" id="price-1"> <div class="between">р.</div> <input type="number" class="lot-add-price lot-add-price-1" id="add-1"><div class="between between-2"></div> <button  title = "Добавить ставку" type="button" class="btn btn-dark" onclick="auto.addPrice(1), auto.sorting()">+</button>
+								<input type="text" class="form-control lot-title lot-title-1" id="title-1"> 
+								<div class="between">-</div> 
+								<input type="text" onchange="auto.sorting(), auto.point(1)" class="form-control bfh-number lot-price lot-price-1" id="price-1" data-buttons="false"> 
+								<div class="between">р.</div> 
+								<input type="text" class="form-control bfh-number lot-add-price lot-add-price-1" id="add-1" data-buttons="false">
+								<div class="between between-2"></div> 
+								<button  title = "Добавить ставку" type="button" class="btn btn-dark" onclick="auto.addPrice(1), auto.sorting()">+</button>
 							</div>
 							
 						</div>

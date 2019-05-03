@@ -126,8 +126,11 @@ body {
                 }
                 .lot-row {
                     padding: 10px 0px;
-                    font-size: 28px;
+                    font-size: 36px;
                     min-width: 500px;
+                    height: 65px;
+                    line-height: 1;
+                    
                     
                     .between {
                         width: 30px;
@@ -139,15 +142,17 @@ body {
                     }
                     
                     .lot-title {
-                        width: calc(100% - 324px);
+                        width: calc(100% - 344px);
                         text-align: end;
                         min-width: 200px;
                     }
                     .lot-price {
-                        width: 95px;
+                        width: 130px;
                     }
                     .lot-add-price {
-                        width: 95px;
+                        width: 80px;
+                        font-size: 24px;
+                        
                     }
                     #title-1,
                     #price-1,
@@ -176,7 +181,9 @@ body {
                     }
                     input {
                         background-color: rgb(216, 216, 216);
+                        font-size: 32px;
                         line-height: 1;
+                        height: 100%;
                         border: 3px solid $primary-text-color;
                         border-radius: 5px;
                         &:focus {
@@ -184,17 +191,14 @@ body {
                             border: 3px solid $accent-color;
                             box-shadow: 0 0 25px $divider-color;
                         }
+                        
                     }
-                
-
-
-
-
                     button {
                         width: 30px;
                         height: 42px;
-                        font-size: 100%;
-                        line-height: 1;
+                        font-size: 32px;
+                        line-height: 1; 
+                        border-radius: 8px;                       
                     }
                 }
                 .add-button-row {

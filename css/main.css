@@ -93,8 +93,10 @@ body .auk-container .auk-row .right-col textarea {
 
 body .auk-container .auk-row .right-col .lot-row {
   padding: 10px 0px;
-  font-size: 28px;
+  font-size: 36px;
   min-width: 500px;
+  height: 65px;
+  line-height: 1;
 }
 
 body .auk-container .auk-row .right-col .lot-row .between {
@@ -108,17 +110,18 @@ body .auk-container .auk-row .right-col .lot-row .between-2 {
 }
 
 body .auk-container .auk-row .right-col .lot-row .lot-title {
-  width: calc(100% - 324px);
+  width: calc(100% - 344px);
   text-align: end;
   min-width: 200px;
 }
 
 body .auk-container .auk-row .right-col .lot-row .lot-price {
-  width: 95px;
+  width: 130px;
 }
 
 body .auk-container .auk-row .right-col .lot-row .lot-add-price {
-  width: 95px;
+  width: 80px;
+  font-size: 24px;
 }
 
 body .auk-container .auk-row .right-col .lot-row #title-1,
@@ -160,7 +163,9 @@ body .auk-container .auk-row .right-col .lot-row #add-2:focus {
 
 body .auk-container .auk-row .right-col .lot-row input {
   background-color: #d8d8d8;
+  font-size: 32px;
   line-height: 1;
+  height: 100%;
   border: 3px solid #212121;
   border-radius: 5px;
 }
@@ -175,8 +180,9 @@ body .auk-container .auk-row .right-col .lot-row input:focus {
 body .auk-container .auk-row .right-col .lot-row button {
   width: 30px;
   height: 42px;
-  font-size: 100%;
+  font-size: 32px;
   line-height: 1;
+  border-radius: 8px;
 }
 
 body .auk-container .auk-row .right-col .add-button-row .btn {
