@@ -99,8 +99,11 @@ var timer = {
     dateActRefresh: function() {
         this.dateAct = new Date();
         document.getElementById('date-act').innerHTML = ('00' + this.dateAct.getHours().toFixed(0)).slice(-2) + ':' + ('00' + this.dateAct.getMinutes().toFixed(0)).slice(-2) + ':' + ('00' + this.dateAct.getSeconds().toFixed(0)).slice(-2);
-        let timeSpend = new Date(this.dateAct.getTime() - timer.dateStart.getTime());
-        document.getElementById('time-spend').innerHTML = ('00' + (timeSpend.getHours()-5).toFixed(0)).slice(-2) + ':' + ('00' + timeSpend.getMinutes().toFixed(0)).slice(-2) + ':' + ('00' + timeSpend.getSeconds().toFixed(0)).slice(-2);
+        let timeSpend = this.dateAct.getTime() - timer.dateStart.getTime();
+        let hourSpend = Math.floor(timeSpend / (60000 * 60));
+        let minSpend = Math.floor((timeSpend - hourSpend * (60000 * 60))/ 60000);
+        let secSpend = Math.floor((timeSpend - minSpend * 60000 - hourSpend * (60000 * 60)) / 1000);
+        document.getElementById('time-spend').innerHTML = ('00' + hourSpend).slice(-2) + ':' + ('00' + minSpend).slice(-2) + ':' + ('00' + secSpend).slice(-2);
         
     },
     // Показывать/не показывать текст снизу
