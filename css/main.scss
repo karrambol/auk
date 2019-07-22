@@ -89,9 +89,18 @@ body {
                         justify-self: center;
                         width: 112.5px;
                         height: 30px;
-                        margin: 10px 10px 0 10px;
+                        // margin: 10px 10px 0 10px;
+                        margin-top: 10px;
                         font-size: 100%;
                         
+                    }
+                    .btn-dark {
+                        border-right: black 5px;
+                        
+                    }
+                    .btn-secondary {
+                        border-left: black 5px;
+                        border-right: black 100px;
                     }
                     .time-spend-container { 
                         justify-self: end;

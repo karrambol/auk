@@ -69,8 +69,17 @@ body .auk-container .auk-row .right-col .toggle-row .btn {
       justify-self: center;
   width: 112.5px;
   height: 30px;
-  margin: 10px 10px 0 10px;
+  margin-top: 10px;
   font-size: 100%;
+}
+
+body .auk-container .auk-row .right-col .toggle-row .btn-dark {
+  border-right: black 5px;
+}
+
+body .auk-container .auk-row .right-col .toggle-row .btn-secondary {
+  border-left: black 5px;
+  border-right: black 100px;
 }
 
 body .auk-container .auk-row .right-col .toggle-row .time-spend-container {
