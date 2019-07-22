@@ -85,13 +85,25 @@ body {
                 align-items: center;
                 justify-content: center;
                 .toggle-row {
-                    
                     .btn {
-                        width: 150px;
+                        justify-self: center;
+                        width: 112.5px;
                         height: 30px;
                         margin: 10px 10px 0 10px;
                         font-size: 100%;
-
+                        
+                    }
+                    .time-spend-container { 
+                        justify-self: end;
+                        height: 30px;
+                        margin: 10px 10px 0 10px;
+                        font-size: 100%;
+                        p {
+                            text-align: end;
+                            color: $primary-text-color;
+                            font-size: 2rem;
+                            transition: 1s;
+                        }
                     }
                 }
                 .buttons-row {
@@ -145,7 +157,7 @@ body {
                 }
                 .lot-row {
                     padding: 10px 0px;
-                    font-size: 36px;
+                    font-size: 45px;
                     min-width: 500px;
                     height: 65px;
                     line-height: 1;
@@ -224,7 +236,7 @@ body {
                 }
                 .add-button-row {
                     .btn {
-                        width: 150px;
+                        width: 112.5px;
                         height: 30px;
                         font-size: 100%;
                     }
@@ -233,6 +245,7 @@ body {
             }    
             .clock-col { //Правая сторона (часы)
                 max-width: 600px;
+                max-height: 90vh;
                 margin-right: 0px;
                 .text-over {
                     p {

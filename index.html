@@ -37,7 +37,17 @@
 		<div class="auk-container container-fluid col-md-12 col-sm-12">
 			<div class="auk-row row justify-content-center justify-self-center">
 				<div class="right-col col">
-					<div class="row  toggle-row justify-content-center"> <button title = "Новый вид" type="button" class="btn btn-primary" onclick="autoOn()">Auto</button><button title = "Старый вид" type="button" class="btn btn-secondary" onclick="legacyOn()">Legacy</button> </div>
+					<div class="row  toggle-row"> 
+						<div class="col">
+							<button title = "Новый вид" type="button" class="btn btn-dark" onclick="autoOn()">Auto</button>
+							<button title = "Старый вид" type="button" class="btn btn-secondary" onclick="legacyOn()">Legacy</button>
+						</div>
+						<div class="time-spend-container col">
+							<p id="time-spend-container-p" class="" disabled>
+								Потрачено время: <span id="time-spend">00:00:00</span>
+							</p>
+						</div>
+					</div>
 					<div class="legacy-sheet" id="legacy-sheet" style="display: none">
 						<div class="row  buttons-row justify-content-end">
 							<div type="buton" title = "+ Ширина шрифта" class="btn string-up-btn btn-dark" onclick="table.fzMulti(1.1)"><i class="fas fa-text-height 1"></i> +</div>
@@ -56,14 +66,14 @@
 								<input type="text" class="form-control lot-title lot-title-1" id="title-1"> 
 								<div class="between">-</div> 
 								<input type="text" onchange="auto.sorting(), auto.point(1)" class="form-control bfh-number lot-price lot-price-1" id="price-1" data-buttons="false"> 
-								<div class="between">р.</div> 
+								<div class="between">₽</div> 
 								<input type="text" class="form-control bfh-number lot-add-price lot-add-price-1" id="add-1" data-buttons="false">
 								<div class="between between-2"></div> 
 								<button  title = "Добавить ставку" type="button" class="btn btn-dark" onclick="auto.addPrice(1), auto.sorting()">+</button>
 							</div>
 							
 						</div>
-						<div title = "Добавить лот" class="row add-button-row justify-content-center"> <button type="button" class="btn btn-primary" onclick="auto.addLot()">+</button></div>
+						<div title = "Добавить лот" class="row add-button-row justify-content-center"> <button type="button" class="btn btn-dark" onclick="auto.addLot()">+</button></div>
 					</div>
 					
 				</div>

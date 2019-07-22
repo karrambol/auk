@@ -65,10 +65,28 @@ body .auk-container .auk-row .right-col {
 }
 
 body .auk-container .auk-row .right-col .toggle-row .btn {
-  width: 150px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 112.5px;
   height: 30px;
   margin: 10px 10px 0 10px;
   font-size: 100%;
+}
+
+body .auk-container .auk-row .right-col .toggle-row .time-spend-container {
+  -ms-grid-column-align: end;
+      justify-self: end;
+  height: 30px;
+  margin: 10px 10px 0 10px;
+  font-size: 100%;
+}
+
+body .auk-container .auk-row .right-col .toggle-row .time-spend-container p {
+  text-align: end;
+  color: #212121;
+  font-size: 2rem;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 body .auk-container .auk-row .right-col .buttons-row {
@@ -114,7 +132,7 @@ body .auk-container .auk-row .right-col textarea {
 
 body .auk-container .auk-row .right-col .lot-row {
   padding: 10px 0px;
-  font-size: 36px;
+  font-size: 45px;
   min-width: 500px;
   height: 65px;
   line-height: 1;
@@ -209,13 +227,14 @@ body .auk-container .auk-row .right-col .lot-row button {
 }
 
 body .auk-container .auk-row .right-col .add-button-row .btn {
-  width: 150px;
+  width: 112.5px;
   height: 30px;
   font-size: 100%;
 }
 
 body .auk-container .auk-row .clock-col {
   max-width: 600px;
+  max-height: 90vh;
   margin-right: 0px;
 }
 

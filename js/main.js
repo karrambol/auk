@@ -5,6 +5,7 @@ var timer = {
     min: 10,
     sec: 0,
     dateAct: new Date(),
+    dateStart: new Date(),
     dateEnd: 0,
     // Умный тик
     smartTick: function(tickValue) {
@@ -98,6 +99,9 @@ var timer = {
     dateActRefresh: function() {
         this.dateAct = new Date();
         document.getElementById('date-act').innerHTML = ('00' + this.dateAct.getHours().toFixed(0)).slice(-2) + ':' + ('00' + this.dateAct.getMinutes().toFixed(0)).slice(-2) + ':' + ('00' + this.dateAct.getSeconds().toFixed(0)).slice(-2);
+        let timeSpend = new Date(this.dateAct.getTime() - timer.dateStart.getTime());
+        document.getElementById('time-spend').innerHTML = ('00' + (timeSpend.getHours()-5).toFixed(0)).slice(-2) + ':' + ('00' + timeSpend.getMinutes().toFixed(0)).slice(-2) + ':' + ('00' + timeSpend.getSeconds().toFixed(0)).slice(-2);
+        
     },
     // Показывать/не показывать текст снизу
     textUnderShow: function(_set) {
@@ -149,7 +153,7 @@ var table = {
         this.write(this.contentArray.reduce(_this.reducer));
     },
     reducer: function (accumulator, currentValue) {
-       return accumulator + '\n' + currentValue;
+        return accumulator + '\n' + currentValue;
     },
     // Поднять строку number на одну вверх
     stringUp: function (number) {
@@ -242,7 +246,7 @@ var auto = {
     container: $('#auto-sheet'),
     addLot: () => {
         let i = 1 + $('#auto-sheet').children().length;
-        $('#auto-sheet').append('<div class="row lot-row justify-content-center" id="lot-' + i + '"><input type="text" class="form-control lot-title" id="title-' + i + '"> <div class="between">-</div> <input type="text" class="form-control bfh-number lot-price" onchange="auto.sorting(), auto.point(' + i + ')" id="price-' + i + '" data-buttons="false"> <div class="between">р.</div> <input type="text" class="form-control bfh-number lot-add-price" id="add-' + i + '" data-buttons="false"><div class="between between-2"></div> <button  title = "Добавить ставку" type="button" class="btn btn-dark" onclick="auto.addPrice(' + i + '), auto.sorting();">+</button></div>');
+        $('#auto-sheet').append('<div class="row lot-row justify-content-center" id="lot-' + i + '"><input type="text" class="form-control lot-title" id="title-' + i + '"> <div class="between">-</div> <input type="text" class="form-control bfh-number lot-price" onchange="auto.sorting(), auto.point(' + i + ')" id="price-' + i + '" data-buttons="false"> <div class="between">₽</div> <input type="text" class="form-control bfh-number lot-add-price" id="add-' + i + '" data-buttons="false"><div class="between between-2"></div> <button  title = "Добавить ставку" type="button" class="btn btn-dark" onclick="auto.addPrice(' + i + '), auto.sorting();">+</button></div>');
         // document.getElementById('price-' + i).value = 0;
         // document.getElementById('add-' + i).value = 0;
     },
@@ -333,8 +337,9 @@ const legacyOn = () => {
     table.contentArray[i] = auto.content[i].name + ' - ' + auto.content[i].price + ' р.';
     console.dir(table.contentArray);
     table.write(table.contentArray.reduce(table.reducer));
-    };
 };
+};
+console.log(timer.dateStart)
 const autoOn = () => {
     document.getElementById('auto-container').style = 'display: unset;';
     document.getElementById('legacy-sheet').style = 'display: none;';
@@ -361,10 +366,9 @@ const autoHold = (num) => {
 autoHold(10);
 // autoHoldTest(10);
 // console.dir(auto.content[0].name);
+timer.dateStart  = new Date();
 setInterval(timer.dateActRefresh,500);
 table.read();
-
-
 
 
 
