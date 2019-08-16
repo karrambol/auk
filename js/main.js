@@ -104,7 +104,6 @@ var timer = {
         let minSpend = Math.floor((timeSpend - hourSpend * (60000 * 60))/ 60000);
         let secSpend = Math.floor((timeSpend - minSpend * 60000 - hourSpend * (60000 * 60)) / 1000);
         document.getElementById('time-spend').innerHTML = ('00' + hourSpend).slice(-2) + ':' + ('00' + minSpend).slice(-2) + ':' + ('00' + secSpend).slice(-2);
-        
     },
     // Показывать/не показывать текст снизу
     textUnderShow: function(_set) {
@@ -250,8 +249,6 @@ var auto = {
     addLot: () => {
         let i = 1 + $('#auto-sheet').children().length;
         $('#auto-sheet').append('<div class="row lot-row justify-content-center" id="lot-' + i + '"><input type="text" class="form-control lot-title" id="title-' + i + '"> <div class="between">-</div> <input type="text" class="form-control bfh-number lot-price" onchange="auto.sorting(), auto.point(' + i + ')" id="price-' + i + '" data-buttons="false"> <div class="between">₽</div> <input type="text" class="form-control bfh-number lot-add-price" id="add-' + i + '" data-buttons="false"><div class="between between-2"></div> <button  title = "Добавить ставку" type="button" class="btn btn-dark" onclick="auto.addPrice(' + i + '), auto.sorting();">+</button></div>');
-        // document.getElementById('price-' + i).value = 0;
-        // document.getElementById('add-' + i).value = 0;
     },
     read: () => {
         let a = $('#auto-sheet').children().length;
@@ -260,13 +257,8 @@ var auto = {
             auto.content[(i-1)].name = document.getElementById('title-' + i).value;
             auto.content[(i-1)].price = document.getElementById('price-' + i).value;
             auto.content[(i-1)].add = document.getElementById('add-' + i).value;  
-
             auto.content[(i-1)].priceMath = parseFloat(document.getElementById('price-' + i).value);
             auto.content[(i-1)].addMath = parseFloat(document.getElementById('add-' + i).value);   
-            
-            // if (isNaN(auto.content[(i-1)].price)) {auto.content[(i-1)].priceMath = 0}
-            // if (isNaN(auto.content[(i-1)].add)) {auto.content[(i-1)].addMath = 0}
-
         };        
     },
     write: () => {
