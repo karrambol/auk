@@ -63,9 +63,10 @@ body {
         align-content: center;
         
         font-size: 40px;
+        line-height: 100%;
         a {
-            position: absolute;               /* 2 */
-            top: 55%;
+            position: absolute;
+            top: calc(50% + 40px / 2);
             left: calc(50% - 334px / 2);
             text-align: center;
             color: $accent-color;
@@ -79,8 +80,8 @@ body {
         }
         p {
             text-align: center;
-            position: absolute;               /* 2 */
-            top: 50%;
+            position: absolute;
+            top: calc(50% - 40px / 2);
             left: calc(50% - 225px / 2);
             color: black;
         }

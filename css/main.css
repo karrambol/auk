@@ -37,12 +37,12 @@ body .info {
   -ms-flex-line-pack: center;
       align-content: center;
   font-size: 40px;
+  line-height: 100%;
 }
 
 body .info a {
   position: absolute;
-  /* 2 */
-  top: 55%;
+  top: calc(50% + 40px / 2);
   left: calc(50% - 334px / 2);
   text-align: center;
   color: #448AFF;
@@ -58,8 +58,7 @@ body .info a:hover {
 body .info p {
   text-align: center;
   position: absolute;
-  /* 2 */
-  top: 50%;
+  top: calc(50% - 40px / 2);
   left: calc(50% - 225px / 2);
   color: black;
 }
