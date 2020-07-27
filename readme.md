@@ -1,3 +1,3 @@
 My first project.
 
-Now rewrited on vue.js deployed [here](https://zhmil.ru).
+Current version [repository](https://github.com/karrambol/Aukcio) deployed [here](https://zhmil.ru).
